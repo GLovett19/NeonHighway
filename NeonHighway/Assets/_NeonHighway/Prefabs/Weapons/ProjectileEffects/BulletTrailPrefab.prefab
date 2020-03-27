@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLine: {fileID: 8842264630064449095}
-  lifeTime: 0.9
+  lifeTime: 0.99
   ShowDecay: 0
   StartPos: {x: 0, y: 0, z: 0}
   EndPos: {x: 0, y: 0, z: 0}
