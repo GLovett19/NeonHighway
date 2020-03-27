@@ -173,7 +173,7 @@ public class ItemHolder : CustomInteractible
 
             case StorageType.Endless:
                 {
-                storedObject.transform.SetParent(null);
+                storedObject.transform.SetParent(hand.GetComponentInParent<SteamVR_PlayArea>().transform);
                 hand.SelectedGpibInteractible = storedObject;
                 hand.GrabInteractible = storedObject;
                 hand.grabPoser = storedObject.grabPoints[0];
@@ -222,7 +222,7 @@ public class ItemHolder : CustomInteractible
         }
             case StorageType.Limited:
                 {
-                    storedObject.transform.SetParent(null);
+                    storedObject.transform.SetParent(hand.GetComponentInParent<SteamVR_PlayArea>().transform);
                     hand.SelectedGpibInteractible = storedObject;
                     hand.GrabInteractible = storedObject;
                     hand.grabPoser = storedObject.grabPoints[0];
@@ -251,7 +251,7 @@ public class ItemHolder : CustomInteractible
                     break;
                 }
             case StorageType.Magnetic:
-                storedObject.transform.SetParent(null);
+                storedObject.transform.SetParent(hand.GetComponentInParent<SteamVR_PlayArea>().transform);
                 hand.SelectedGpibInteractible = storedObject;
                 hand.GrabInteractible = storedObject;
                 hand.grabPoser = storedObject.grabPoints[0];
