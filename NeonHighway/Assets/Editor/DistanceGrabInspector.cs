@@ -17,6 +17,8 @@ public class DistanceGrabInspector : Editor
     private const float pickSize = 0.06f;
 
     private int selectedIndex = -1;
+
+    bool showAllValues;
     /*
     Tool lastTool = Tool.None;
 
@@ -50,9 +52,21 @@ public class DistanceGrabInspector : Editor
     }
     public override void OnInspectorGUI()
     {
+        showAllValues = EditorGUILayout.Toggle(showAllValues);
+        if (showAllValues)
+        {
+            DrawDefaultInspector();
+        }
+        try
+        {
+            distGrab.numPoints = (int)EditorGUILayout.Slider(distGrab.numPoints, 0, 300);
 
-        distGrab.numPoints= (int)EditorGUILayout.Slider(distGrab.numPoints, 0, 300);
-
+            distGrab.coneHeight = EditorGUILayout.Slider(distGrab.coneHeight, 1, 10);
+        }
+        catch
+        {
+            Debug.Log("Distance grabber not yet assigned");
+        }
         //DrawDefaultInspector();
         if (selectedIndex >= 0 && selectedIndex < distGrab.points.Length)
         {
