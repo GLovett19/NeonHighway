@@ -59,9 +59,11 @@ public class DistanceGrabInspector : Editor
         }
         try
         {
-            distGrab.numPoints = (int)EditorGUILayout.Slider(distGrab.numPoints, 0, 300);
+            distGrab.numPoints = (int)EditorGUILayout.Slider("Points",distGrab.numPoints, 0, 300);
 
-            distGrab.coneHeight = EditorGUILayout.Slider(distGrab.coneHeight, 1, 10);
+            distGrab.coneHeight = EditorGUILayout.Slider("Range", distGrab.coneHeight, 1, 10);
+
+            distGrab.coneRotation = EditorGUILayout.Vector3Field("rotation", distGrab.coneRotation);
         }
         catch
         {

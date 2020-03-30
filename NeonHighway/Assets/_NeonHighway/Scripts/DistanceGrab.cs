@@ -22,46 +22,142 @@ public class DistanceGrab : CustomHand
     /// </summary>
 
     //Public Components
-    //public CustomHand myHand;
+    public LineRenderer SelectionLine;
 
 
     //Public fields 
     public int numPoints = 100;
     public float coneHeight = 10;
+    public Vector3 coneRotation;
     [HideInInspector]
     public Vector3[] points;
     public LayerMask mask;
 
-    public List<PhysicalObject> distanceGrabbable;
-    public PhysicalObject distanceGrabbableSelected;
-
     //Private fields 
     float pow = 0.5f;
 
-    private void Update()
+
+    public void PopulateDistanceGrabSelection(List<Collider> colList)
     {
         // Raycast out for each point on the distance grabber;
         for (int i = 0; i < numPoints; i++)
         {
-            //Debug.DrawLine(transform.position, transform.TransformPoint(points[i]), Color.green);
+
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, (transform.TransformPoint(points[i])- transform.position).normalized,out hit, 5f,mask,QueryTriggerInteraction.Ignore)) 
+            if (Physics.Raycast(transform.position, (transform.TransformPoint(points[i]) - transform.position).normalized, out hit, 5f, mask, QueryTriggerInteraction.Ignore))
             {
-
-                if (hit.collider.gameObject.GetComponentInParent<PhysicalObject>())
+                if (hit.collider.GetComponentInParent<CustomInteractible>())
                 {
-                    Debug.Log("Cone Hit Object which can be grabbed");
-                    Debug.DrawLine(transform.position, hit.point, Color.green);
-                    // add the object to the list if it isnt already on it 
-                    // check if it is has a point closer to the center 
+                    colList.Add(hit.collider);
                 }
-                else
-                {
-                    //Debug.DrawLine(transform.position, hit.point, Color.green);
-                }
-                
             }
+            Debug.DrawLine(transform.position, hit.point,Color.yellow);
+        }
+    }
 
+    public override void GrabCheck()
+    {
+        if (grabType != GrabType.None && GrabInteractible)
+        {
+            SelectionLine.enabled = false;
+        }
+            base.GrabCheck();
+    }
+    public override void SelectGribObject()
+    {
+        SelectionLine.enabled = false;
+        List<Collider> SelectedDistanceGripColliders = new List<Collider>();
+        if (!grabPoser)
+        {
+            
+            SelectedGpibColliders = Physics.OverlapSphere(GrabPoint(), gripRadius, layerColliderChecker);
+            PopulateDistanceGrabSelection(SelectedDistanceGripColliders);
+            SelectedGpibInteractible = null;
+            float tempCloseDistance = float.MaxValue;
+            if (SelectedGpibColliders.Length > 0)
+            {             
+                for (int i = 0; i < SelectedGpibColliders.Length; i++)
+                {
+                    CustomInteractible tempCustomInteractible = SelectedGpibColliders[i].GetComponentInParent<CustomInteractible>();
+                    if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Grip)
+                    {
+                        if (Vector3.Distance(tempCustomInteractible.transform.position, GrabPoint()) < tempCloseDistance)
+                        {
+                            tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, GrabPoint());
+                            SelectedGpibInteractible = tempCustomInteractible;
+                        }
+                    }
+                }
+            }
+            else if (SelectedDistanceGripColliders.Count > 0)
+            {
+                SelectionLine.enabled = true;
+                RaycastHit hit;
+                Physics.Raycast(transform.position, (transform.TransformPoint(points[0]) - transform.position).normalized, out hit, 5f, mask, QueryTriggerInteraction.Ignore);
+                for (int i = 0; i < SelectedDistanceGripColliders.Count; i++)
+                {
+                    CustomInteractible tempCustomInteractible = SelectedDistanceGripColliders[i].GetComponentInParent<CustomInteractible>();
+                    if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Grip)
+                    {
+                        if (Vector3.Distance(tempCustomInteractible.transform.position,hit.point) < tempCloseDistance)
+                        {
+                            tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, GrabPoint());
+                            SelectedGpibInteractible = tempCustomInteractible;
+                            SelectionLine.SetPosition(0, transform.position);
+                            SelectionLine.SetPosition(1, SelectedGpibInteractible.transform.position);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    public override void SelectPinchObject()
+    {
+        SelectionLine.enabled = false;
+        List<Collider> SelectedDistancePinchColliders = new List<Collider>();
+        if (!grabPoser)
+        {
+            SelectedPinchColliders = Physics.OverlapSphere(PinchPoint(), pinchRadius, layerColliderChecker);
+            PopulateDistanceGrabSelection(SelectedDistancePinchColliders);
+            SelectedPinchInteractible = null;
+            float tempCloseDistance = float.MaxValue;
+            if (SelectedPinchColliders.Length > 0)
+            {
+                SelectionLine.enabled = false;
+                for (int i = 0; i < SelectedPinchColliders.Length; i++)
+                {
+                    CustomInteractible tempCustomInteractible = SelectedPinchColliders[i].GetComponentInParent<CustomInteractible>();
+                    if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Pinch)
+                    {
+                        if (Vector3.Distance(tempCustomInteractible.transform.position, PinchPoint()) < tempCloseDistance)
+                        {
+                            tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, PinchPoint());
+                            SelectedPinchInteractible = tempCustomInteractible;
+                        }
+                    }
+                }
+            }
+            else if (SelectedDistancePinchColliders.Count > 0)
+            {
+                SelectionLine.enabled = true;
+                RaycastHit hit;
+                Physics.Raycast(transform.position, (transform.TransformPoint(points[0]) - transform.position).normalized, out hit, 5f, mask, QueryTriggerInteraction.Ignore);
+                for (int i = 0; i < SelectedDistancePinchColliders.Count; i++)
+                {
+                    CustomInteractible tempCustomInteractible = SelectedDistancePinchColliders[i].GetComponentInParent<CustomInteractible>();
+                    if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == GrabType.Pinch)
+                    {
+                        if (Vector3.Distance(tempCustomInteractible.transform.position,hit.point) < tempCloseDistance)
+                        {
+                            tempCloseDistance = Vector3.Distance(tempCustomInteractible.transform.position, PinchPoint());
+                            SelectedPinchInteractible = tempCustomInteractible;
+                            SelectionLine.SetPosition(0, transform.position);
+                            SelectionLine.SetPosition(1, SelectedPinchInteractible.transform.position);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -80,9 +176,11 @@ public class DistanceGrab : CustomHand
 
             float x = dst * Mathf.Cos(angle);
             float y = dst * Mathf.Sin(angle);
-            
-            points[i] = new Vector3(x, y, coneHeight);
+            float z = coneHeight;
 
+            
+            points[i] = new Vector3(x,y,z);
+            points[i] = RotatePointsAroundPivot(points[i], transform.position, coneRotation);
 
             ///
             /// This Code below can generate points and then project them onto a sphere.
@@ -105,4 +203,13 @@ public class DistanceGrab : CustomHand
 
         }
     }
+    public Vector3 RotatePointsAroundPivot(Vector3 point, Vector3 pivot,Vector3 angles)
+    {
+        Vector3 dir = point - pivot;
+        dir = Quaternion.Euler(angles) * dir;
+        point = dir + pivot;
+        return point;
+    }
+
+
 }
