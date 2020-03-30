@@ -89,7 +89,6 @@
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineDecorator.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineWalkerMode.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SpllineWalker.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\BoidHelper.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\DistanceGrab.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ActiveSceneManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\AppManager.cs" />

@@ -44,7 +44,7 @@ public class DistanceGrab : CustomHand
         {
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, (transform.TransformPoint(points[i]) - transform.position).normalized, out hit, 5f, mask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(transform.position, (transform.TransformPoint(points[i]) - transform.position).normalized, out hit, 5f, mask, QueryTriggerInteraction.Collide))
             {
                 if (hit.collider.GetComponentInParent<CustomInteractible>())
                 {

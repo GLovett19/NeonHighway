@@ -42,7 +42,7 @@ public class ShootingTarget : MonoBehaviour
         if (rotationPoint.transform.localEulerAngles.x < 90)
         {
             count += Time.deltaTime * speed;
-            Debug.Log(rotationPoint.transform.localEulerAngles.x);
+           // Debug.Log(rotationPoint.transform.localEulerAngles.x);
             rotationPoint.transform.localRotation = Quaternion.Lerp(rotationPoint.transform.localRotation,
                 Quaternion.Euler(90, 0, 0), count);
             if (count >= 1)
