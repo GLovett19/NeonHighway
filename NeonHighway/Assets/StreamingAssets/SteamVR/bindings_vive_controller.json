@@ -1,5 +1,7 @@
 {
-   "app_key" : "application.generated.unity.steamvr.exe",
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.unity.neonhighway.exe",
    "bindings" : {
       "/actions/buggy" : {
          "sources" : [
@@ -206,6 +208,82 @@
                },
                "mode" : "trigger",
                "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/triggerclick"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/triggerclick"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/left/input/grip"
+            },
+            {
+               "inputs" : {},
+               "mode" : "none",
+               "path" : "/user/hand/right/input/grip"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/left/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/default/in/trigger"
+                  }
+               },
+               "mode" : "trigger",
+               "path" : "/user/hand/right/input/trigger"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/default/in/upperbuttonclick"
+                  },
+                  "south" : {
+                     "output" : "/actions/default/in/lowerbuttonclick"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/left/input/trackpad"
+            },
+            {
+               "inputs" : {
+                  "north" : {
+                     "output" : "/actions/default/in/upperbuttonclick"
+                  },
+                  "south" : {
+                     "output" : "/actions/default/in/lowerbuttonclick"
+                  }
+               },
+               "mode" : "dpad",
+               "parameters" : {
+                  "sub_mode" : "click"
+               },
+               "path" : "/user/hand/right/input/trackpad"
             }
          ]
       },
@@ -250,7 +328,10 @@
          ]
       }
    },
+   "category" : "steamvr_input",
    "controller_type" : "vive_controller",
    "description" : "",
-   "name" : "vive_controller"
+   "name" : "My NeonHighway [Testing] configuration for Vive Controller",
+   "options" : {},
+   "simulated_actions" : []
 }

@@ -20,6 +20,10 @@ public class pointer : MonoBehaviour
         UpdateLine();
     }
 
+    public void SetLineVisibility(bool val)
+    {
+        line.enabled = val;
+    }
     private void UpdateLine()
     {
         // use default value for length or distance 
