@@ -110,7 +110,7 @@ public class CustomHand : MonoBehaviour
         }
     }
 
-    public virtual void GrabCheck()
+    public void GrabCheck()
     {
         if (grabType != GrabType.None && GrabInteractible)
         {
@@ -298,7 +298,7 @@ public class CustomHand : MonoBehaviour
 
     }
 
-    virtual public void LateUpdate()
+    public void LateUpdate()
     {
         if (grabPoser)
         {
@@ -409,7 +409,7 @@ public class CustomHand : MonoBehaviour
         }
     }
 
-    public virtual void SelectPinchObject()
+    public void SelectPinchObject()
     {
         if (!grabPoser)
         {
@@ -431,7 +431,7 @@ public class CustomHand : MonoBehaviour
         }
     }
 
-    public virtual void SelectGribObject()
+    public void SelectGribObject()
     {
         if (!grabPoser)
         {
