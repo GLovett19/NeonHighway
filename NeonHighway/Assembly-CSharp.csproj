@@ -101,6 +101,7 @@
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModule.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\pointer.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MuzzleEffect.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PedalTrigger.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PlayerBodyScript.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ShootingTarget.cs" />
