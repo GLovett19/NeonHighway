@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpllineWalker : MonoBehaviour
+public class SplineWalker : MonoBehaviour
 {
     public BezierSpline spline;
     public float duration;
+    public float speed;
 
     public bool lookForward;
     public SplineWalkerMode mode;
@@ -13,11 +14,14 @@ public class SpllineWalker : MonoBehaviour
 
 
     public float progress;
+
+
+
     public virtual void Update()
     {
         if (goingForeward)
         {
-            progress += Time.deltaTime / duration;
+            progress += Time.deltaTime / (duration*(1 - (speed/100)));
             if (progress > 1f)
             {
                 if (mode == SplineWalkerMode.Once)
@@ -37,7 +41,7 @@ public class SpllineWalker : MonoBehaviour
         }
         else
         {
-            progress -= Time.deltaTime / duration;
+            progress -= Time.deltaTime / (duration* (1 - (speed / 100)));
             if (progress <= 0f)
             {
                 progress = -progress;
@@ -51,4 +55,5 @@ public class SpllineWalker : MonoBehaviour
             transform.LookAt(position + spline.GetDirection(progress));
         }
     }
+    
 }

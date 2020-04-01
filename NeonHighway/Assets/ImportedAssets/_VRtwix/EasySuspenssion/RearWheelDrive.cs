@@ -42,12 +42,10 @@ public class RearWheelDrive : MonoBehaviour {
 	public void Update()
 	{
         float angle = maxAngle * (sw.angle / 720 );//Input.GetAxis("Horizontal");
-		float torque = maxTorque * pedal.Axis;
-		float joystickValueNorm = Mathf.Abs(pedal.Axis);
 
 
-        //float torque = maxTorque * jstk.value.y;//Input.GetAxis("Vertical");
-        //float joystickValueNorm = Mathf.Abs(jstk.value.y);
+        float torque = maxTorque * jstk.value.y;//Input.GetAxis("Vertical");
+        float joystickValueNorm = Mathf.Abs(jstk.value.y);
 
         // changing particles emissions 
         var emission = exhaust.emission;

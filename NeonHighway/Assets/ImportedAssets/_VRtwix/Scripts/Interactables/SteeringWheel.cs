@@ -17,9 +17,6 @@ public class SteeringWheel : CustomInteractible {
 	public float PowerSteeringStrength;
 	bool PowerSteeringActive;
 
-	// adding "foot pedals" with triggers
-	//public PedalTrigger pedal;
-	// end added Script
 
 	void Start () {
 		if (grabPoints!=null&&grabPoints.Count>0)
@@ -30,6 +27,10 @@ public class SteeringWheel : CustomInteractible {
 	
 	private void Update()
 	{
+		if (leftHand == null && rightHand == null)
+		{
+			PowerSteeringActive = true;
+		}
 		// if not grabbed interpolate back to starting position
 		if (PowerSteering && PowerSteeringActive)
 		{
@@ -70,9 +71,6 @@ public class SteeringWheel : CustomInteractible {
 
 	public void GrabUpdate(CustomHand hand){
 
-		// adding the grab custom update for the trigger
-		//pedal.customUpdate(hand);
-		// end added Script
 
 		Transform tempPoser = GetMyGrabPoserTransform (hand);
 		Vector3 HandTolocalPos = transform.InverseTransformPoint (hand.PivotPoser.position);
@@ -100,7 +98,7 @@ public class SteeringWheel : CustomInteractible {
 
 	public void GrabEnd(CustomHand hand){
 		// powerSteering stuff 
-		PowerSteeringActive = true;
+		
 		//
 		DettachHand (hand);
 		ReleaseHand.Invoke ();
