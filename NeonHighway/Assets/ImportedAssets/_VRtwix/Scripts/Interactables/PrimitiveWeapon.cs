@@ -64,7 +64,6 @@ public class PrimitiveWeapon : PhysicalObject
         }
     }
 
-
     new public void GrabStart(CustomHand hand){
 		GrabStartCustom (hand);
 	}

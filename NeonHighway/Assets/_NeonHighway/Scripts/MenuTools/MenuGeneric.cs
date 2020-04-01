@@ -6,29 +6,28 @@ using UnityEngine.EventSystems;
 
 public class MenuGeneric : MonoBehaviour
 {
-    //Auto Assigned components
-    public EventSystem MyEventSystem;
-
     //Inpsector Assigned Components
+    [Header("Inspector Assigned Components")]
     public PanelGeneric FirstPanel;
+    public List<PanelGeneric> subPanels; // this is a list of all accessible sub panels in this scene from this menu. this is filled in the inspector and does not populate automatically
+
+    //Auto Assigned components
+    private EventSystem MyEventSystem;
 
     //Private Fields
     //None Just yet
 
     //Public Fields 
+    [Header("Public Fields")]
     public string currScene;
-    public List<PanelGeneric> subPanels; // this is a list of all accessible sub panels in this scene from this menu. this is filled in the inspector and does not populate automatically
 
 
-    // Start is called before the first frame update
-    public virtual void Start()
+    private void Awake()
     {
         MyEventSystem = FindObjectOfType<EventSystem>();
-
     }
 
-    // Update is called once per frame
-    public virtual void Update()
+    void Update()
     {
         if (MyEventSystem.currentSelectedGameObject == null)
         {

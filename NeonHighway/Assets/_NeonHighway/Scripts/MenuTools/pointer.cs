@@ -5,15 +5,21 @@ using UnityEngine.EventSystems;
 
 public class pointer : MonoBehaviour
 {
-    public float defaultLength = 5.0f;
-    public GameObject dot;
-    public VRInputModule inputModule;
-
+    // public components assigned in the inspector
+    [Header("Inspector Assigned Components")]
+    public GameObject dot; // empty object set to the hitpoint of the raycast, used to guide the line renderer
+    [Header("Public Fields")]
+    public float defaultLength = 5.0f; // the range of the pointer 
+    
+    
+    // private components auto assigned
+    private VRInputModule inputModule;
     private LineRenderer line = null;
 
     private void Awake()
     {
         line = GetComponent<LineRenderer>();
+        inputModule = FindObjectOfType<VRInputModule>();
     }
     private void Update()
     {

@@ -6,13 +6,22 @@ using Valve.VR;
 
 
 public class VRInputModule : BaseInputModule
-{
+{   // public components
+    [Header("Inspector Assigned Components")]
     public Camera cam;
-    public SteamVR_Input_Sources handType;
     public SteamVR_Action_Boolean clickButton;
 
+    // private components
     private GameObject currentObject = null;
     private PointerEventData data = null;
+
+    //public fields 
+    [Header("Public fields")]
+    public SteamVR_Input_Sources handType;
+
+    //private fields 
+     // none
+
 
     protected override void Awake()
     {
@@ -22,7 +31,6 @@ public class VRInputModule : BaseInputModule
     }
     public override void Process()
     {
-        //throw new System.NotImplementedException();
         //reset data
         data.Reset();
 
