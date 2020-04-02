@@ -17,7 +17,8 @@ public class ObjectPoolingManager : MonoBehaviour
     public enum ObjectType
     {
         none,
-        bullet
+        bullet,
+        PopupText
     }
     //public int testing;
     public ObjectToPool[] ObjectsToPool;
@@ -44,11 +45,13 @@ public class ObjectPoolingManager : MonoBehaviour
 
     public GameObject GetObject(string searchTag)
     {
+
         foreach (GameObject obj in pool)
         {
            
             if (!obj.activeInHierarchy && obj.tag.ToString() == searchTag)
             {
+
                 return obj;
                 
             }
@@ -56,8 +59,8 @@ public class ObjectPoolingManager : MonoBehaviour
             GameObject prefabInstance = Instantiate(checkObjectType(searchTag));
             prefabInstance.transform.SetParent(transform);
             pool.Add(prefabInstance);
-
-            return prefabInstance;
+        Debug.Log("3");
+        return prefabInstance;
 
     }
 

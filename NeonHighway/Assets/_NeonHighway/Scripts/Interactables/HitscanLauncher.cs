@@ -20,7 +20,7 @@ public class HitscanLauncher : Launcher
                 impact = hit.point;
                 // damage target or create decal or whatever. 
                 // there has to be a better way to do this I just don't know what it is
-                Debug.Log(hit.transform.name);
+                //Debug.Log(hit.transform.name);
                 try
                 {
                     hit.transform.GetComponentInParent<ShootingTarget>().Damage(1);

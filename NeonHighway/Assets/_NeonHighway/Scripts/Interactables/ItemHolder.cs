@@ -204,7 +204,7 @@ public class ItemHolder : CustomInteractible
                         }
                         else
                         {
-                            Debug.Log(col.name);
+                            //Debug.Log(col.name);
                             col.enabled = false;
                         }
                 }

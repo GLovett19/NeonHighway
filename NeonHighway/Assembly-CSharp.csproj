@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bilboard.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\EasySuspension.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\RearWheelDrive.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\CustomHand.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ActiveSceneManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\AppManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ObjectPoolingManager.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\HUDCountDown.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\HitscanLauncher.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\ItemHolder.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\MuzzleEffect.cs" />
@@ -105,6 +107,8 @@
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModule.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\pointer.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PlayerBodyScript.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\PopupText.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ShootingTarget.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\SplineVehicleMovement.cs" />
     <None Include="Assets\ImportedAssets\_VRtwix\Shaders\Prototype_Global.shader" />
