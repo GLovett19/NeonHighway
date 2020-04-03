@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_NeonHighway/Scenes/ShootingScene.unity
     guid: c5dc645704768e947827ee6f90037791
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/LevelEndScene.unity
+    guid: 406dd977a3285744092e533bf6f31951
   m_configObjects: {}

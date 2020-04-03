@@ -51,7 +51,7 @@ public class MenuGeneric : MonoBehaviour
     }
 
     // Method to show a menu panel
-    public void ShowPanel(string val)
+    public void ShowSinglePanel(string val)
     {
         // check the panel name against all sub panels of this menu
         foreach (PanelGeneric panel in subPanels)
@@ -66,6 +66,18 @@ public class MenuGeneric : MonoBehaviour
             {
                 panel.HidePanel();
                 panel.gameObject.SetActive(false);
+            }
+        }
+    }
+    public void ShowPanel(string val)
+    {
+        foreach (PanelGeneric panel in subPanels)
+        {
+            if (panel.gameObject.name == val)
+            {
+                panel.gameObject.SetActive(true);
+                panel.ShowPanel();
+                MyEventSystem.SetSelectedGameObject(panel.FirstSelected);
             }
         }
     }

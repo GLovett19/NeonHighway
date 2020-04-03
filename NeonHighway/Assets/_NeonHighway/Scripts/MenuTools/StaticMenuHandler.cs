@@ -34,7 +34,7 @@ public class StaticMenuHandler : MonoBehaviour
     void Start()
     {
         myMenu = GetComponentInChildren<MenuGeneric>();
-        myMenu.ShowPanel(myMenu.FirstPanel.name);
+        myMenu.ShowSinglePanel(myMenu.FirstPanel.name);
         if (DominantHand == SteamVR_Input_Sources.RightHand)
         {
             RightHand.GetComponentInChildren<pointer>().SetLineVisibility(true);

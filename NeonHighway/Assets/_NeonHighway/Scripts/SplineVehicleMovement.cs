@@ -56,6 +56,11 @@ public class SplineVehicleMovement : MonoBehaviour
             Speed = Mathf.Clamp(Speed, 1, maxSpeed);
         }
         walker.speed = Speed;
+        if (walker.progress >= 1)
+        {
+            FindObjectOfType<AppManager>().scorePasser = FindObjectOfType<ScoreKeeper>().GetPlayerScore();
+            FindObjectOfType<MenuGeneric>().SelectScene("LevelEndScene");
+        }
     }
 
 }

@@ -69,7 +69,7 @@ public class DynamicMenuHandler : MonoBehaviour
         {
             counter = 0;
             isVisible = true;
-            myMenu.ShowPanel(myMenu.FirstPanel.name);
+            myMenu.ShowSinglePanel(myMenu.FirstPanel.name);
             // enable dominant hand pointer
             if (DominantHand == SteamVR_Input_Sources.RightHand)
             {

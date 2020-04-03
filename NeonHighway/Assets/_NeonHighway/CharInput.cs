@@ -7,17 +7,34 @@ public class CharInput : MonoBehaviour
 {
 
     // ascii character are 65 - 90 for uppercase & 97 - 122 for lowercase
+
+
+    // public components assigned in inspector
+    [Header("Public Components")]
+    public ScoreDisplay myScoreDisplay;
     public Text CharDisplay;
     public Text NameDisplay;
+    public Text ScoreDisplay;
+    // private components self assigned
+
+    // public fields 
+    [Header("Public Fields")]
     public int asciiValue = 65;
 
-    public bool cursorBlink;   
+    public bool cursorBlink;
     public float cursorBlinkSpeed;
     public string myName;
 
+    // Private fields 
     private string cursorCharacter = "";
     private bool cursorOn = false;
     private float counter = 0;
+
+
+    private void OnEnable()
+    {
+        ScoreDisplay.text = myScoreDisplay.newScoreData.scoreValue.ToString();
+    }
     private void Update()
     {
         CharDisplay.text = System.Convert.ToChar(asciiValue).ToString();
@@ -42,8 +59,6 @@ public class CharInput : MonoBehaviour
                         cursorCharacter = cursorCharacter.Substring(0, cursorCharacter.Length - 1);
                     }
                 }
-
-
                
             }
             else
@@ -89,6 +104,7 @@ public class CharInput : MonoBehaviour
         else
         {
             // submit this name and score to the scoreboard and close the input menu.
+            myScoreDisplay.AddScore(myName);
         }
     }
     public void CancelChar()
