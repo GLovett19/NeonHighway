@@ -13,11 +13,14 @@ public class SaveDataScript : MonoBehaviour
         public SaveData()
         {
             LastCompletedLevel = "none";
-            scoreDataset = new List<ScoreData>();
+            //scoreDataset = new List<ScoreData>();
+            levelScoreDataSet = new List<LevelScoreData>();
+
         }
         
         public string LastCompletedLevel;
-        public List<ScoreData> scoreDataset;
+        //public List<ScoreData> scoreDataset;
+        public List<LevelScoreData> levelScoreDataSet;
 
     }
     [System.Serializable]
@@ -26,8 +29,14 @@ public class SaveDataScript : MonoBehaviour
         public string scoreName;
         public int scoreValue;
     }
-    const string SAVE_DATA_FILENAME = "UnderSiegeData.json";
-    const string SAVE_DATA_BACKUP_FILENAME = "UndersiegeBackupData.json";
+    [System.Serializable]
+    public class LevelScoreData
+    {
+        public string LevelName;
+        public List<ScoreData> scoreDataset;
+    }
+    const string SAVE_DATA_FILENAME = "NeonHighway.json";
+    const string SAVE_DATA_BACKUP_FILENAME = "NeonHighwayBackupData.json";
 
     
     public static SaveData MySaveData;

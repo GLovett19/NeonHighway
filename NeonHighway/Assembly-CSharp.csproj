@@ -83,8 +83,8 @@
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Tuner.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\VelocityFix.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\SoundRandomizer.cs" />
+    <Compile Include="Assets\LevelManager.cs" />
     <Compile Include="Assets\ScoreDisplay.cs" />
-    <Compile Include="Assets\_NeonHighway\CharInput.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\Bezier.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierControlPointMode.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierCurve.cs" />
@@ -93,6 +93,7 @@
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineWalker.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineWalkerMode.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BlinkingCursor.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\CharInput.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\DistanceGrabber.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ActiveSceneManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\AppManager.cs" />

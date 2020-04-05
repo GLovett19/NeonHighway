@@ -29,7 +29,7 @@ public class PedalTrigger : MonoBehaviour
     public void customUpdate(CustomHand hand)
 	{
 
-        Debug.Log(hand.handType); // returns LeftHand or RightHand
+        //Debug.Log(hand.handType); // returns LeftHand or RightHand
         switch (hand.handType.ToString())
         {
             case "LeftHand":

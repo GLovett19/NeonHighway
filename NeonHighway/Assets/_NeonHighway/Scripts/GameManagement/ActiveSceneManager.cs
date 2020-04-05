@@ -31,7 +31,7 @@ public class ActiveSceneManager : MonoBehaviour {
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {        
         SceneManager.SetActiveScene(scene);
-        Debug.Log(scene.name);
+        //Debug.Log(scene.name);
     }
 
     public static bool IsSceneLoaded(string sceneName)
