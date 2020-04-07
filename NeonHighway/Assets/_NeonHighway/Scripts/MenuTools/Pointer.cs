@@ -54,6 +54,7 @@ public class Pointer : MonoBehaviour
         // Set linerenderer
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, endPosition);
+
     }
 
     private RaycastHit CreateRaycast()

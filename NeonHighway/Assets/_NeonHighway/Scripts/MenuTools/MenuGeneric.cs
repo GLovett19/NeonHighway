@@ -13,7 +13,7 @@ public class MenuGeneric : MonoBehaviour
 
     //Auto Assigned components
     private EventSystem MyEventSystem;
-
+    private VRInputModule inputModule;
     //Private Fields
     //None Just yet
 
@@ -25,6 +25,7 @@ public class MenuGeneric : MonoBehaviour
     private void Awake()
     {
         MyEventSystem = FindObjectOfType<EventSystem>();
+        inputModule = EventSystem.current.gameObject.GetComponent<VRInputModule>();
     }
 
     void Update()
@@ -41,6 +42,7 @@ public class MenuGeneric : MonoBehaviour
                 }
             }
         }
+        GetComponent<Canvas>().worldCamera = inputModule.pointer.GetComponent<Camera>();
     }
 
     //Method to be initiate a scene change 
@@ -99,4 +101,8 @@ public class MenuGeneric : MonoBehaviour
         Application.Quit();
     }
 
+    public VRInputModule GetInputModule()
+    {
+        return inputModule;
+    }
 }

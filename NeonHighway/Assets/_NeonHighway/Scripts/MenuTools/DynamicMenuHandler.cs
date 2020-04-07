@@ -24,8 +24,6 @@ public class DynamicMenuHandler : MonoBehaviour
 
     [Header("Public Fields")]
     // public Fields 
-    //public SteamVR_Input_Sources handType;
-    public SteamVR_Input_Sources DominantHand;
     public float openTime = 1;
  
 
@@ -45,6 +43,10 @@ public class DynamicMenuHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // set proper pointer visible;
+
+
+
         // if a button is clicked && that hand is not holding anything 
         if (ClickUpperButton.GetState(SteamVR_Input_Sources.LeftHand) && !LeftHand.grabPoser)
         {
@@ -70,20 +72,6 @@ public class DynamicMenuHandler : MonoBehaviour
             counter = 0;
             isVisible = true;
             myMenu.ShowSinglePanel(myMenu.FirstPanel.name);
-            // enable dominant hand pointer
-            if (DominantHand == SteamVR_Input_Sources.RightHand)
-            {
-                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
-                myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
-            }
-            else
-            {
-                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
-                myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
-            }
-            // set canvas event camera to dominant hand pointer camera 
-            
-
 
         }
         if (!isVisible)
@@ -94,25 +82,9 @@ public class DynamicMenuHandler : MonoBehaviour
         }
         else
         {
-            if (TriggerClick.GetStateDown(SteamVR_Input_Sources.LeftHand))
-            {
-                Debug.Log("LeftHandDominant");
-                // set left handdominant
-                DominantHand = SteamVR_Input_Sources.LeftHand;
-                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
-                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
-                myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
-            }
-            if (TriggerClick.GetStateDown(SteamVR_Input_Sources.RightHand))
-            {
-                Debug.Log("LeftHandDominant");
-                // set right hand dominant
-                DominantHand = SteamVR_Input_Sources.RightHand;
-                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
-                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
-                myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
-            }
+            myMenu.GetInputModule().pointer.SetLineVisibility(true);
         }
+      
     }
 
     public void SetVisible(bool val)
