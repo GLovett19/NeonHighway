@@ -63,14 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bilboard.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\EasySuspension.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\RearWheelDrive.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\CustomHand.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\CustomInteractible.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Debug\DebudText.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Bullet.cs" />
-    <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Button.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Joystick.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Launcher.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Magazine.cs" />
@@ -81,10 +79,9 @@
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Toggle.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Trigger.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\Tuner.cs" />
+    <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\VRButton.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\VelocityFix.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\SoundRandomizer.cs" />
-    <Compile Include="Assets\LevelManager.cs" />
-    <Compile Include="Assets\ScoreDisplay.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\Bezier.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierControlPointMode.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierCurve.cs" />
@@ -92,30 +89,37 @@
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineDecorator.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineWalker.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\SplineWalkerMode.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\BlinkingCursor.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\Bilboard.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\CharInput.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\DistanceGrabber.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ActiveSceneManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\AppManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ObjectPoolingManager.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\SaveDataScript.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\HUDCountDown.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\HitscanLauncher.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\ItemHolder.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\MuzzleEffect.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\Interactables\PedalTrigger.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\BlinkingCursor.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\ButtonTransitioner.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\DynamicMenuHandler.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\MenuGeneric.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\PanelGeneric.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\ScrollingButtons.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\StaticMenuHandler.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModule.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\pointer.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModuleOLD.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\pointerOLD.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PlayerBodyScript.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\Pointer.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PopupText.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\SaveDataScript.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ShootingTarget.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\SplineVehicleMovement.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\SteamInputModule.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\VRInputModule.cs" />
     <None Include="Assets\ImportedAssets\_VRtwix\Shaders\Prototype_Global.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

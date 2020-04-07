@@ -9,7 +9,7 @@ public class StaticMenuHandler : MonoBehaviour
     /// This menu handler controls menus which remain 
     /// stationairy and are allways open. 
     /// 
-    /// 
+    /// eventually all of the stuff determining dominant hand and line renderer shoudl be moved to the steam input module 
     /// </summary>
     /// 
 
@@ -28,7 +28,7 @@ public class StaticMenuHandler : MonoBehaviour
 
 
 
-    float counter = 0;
+    //float counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +37,12 @@ public class StaticMenuHandler : MonoBehaviour
         myMenu.ShowSinglePanel(myMenu.FirstPanel.name);
         if (DominantHand == SteamVR_Input_Sources.RightHand)
         {
-            RightHand.GetComponentInChildren<pointer>().SetLineVisibility(true);
+            RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
             myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
         }
         else
         {
-            LeftHand.GetComponentInChildren<pointer>().SetLineVisibility(true);
+            LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
             myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
         }
     }
@@ -55,8 +55,8 @@ public class StaticMenuHandler : MonoBehaviour
             Debug.Log("LeftHandDominant");
             // set left handdominant
             DominantHand = SteamVR_Input_Sources.LeftHand;
-            RightHand.GetComponentInChildren<pointer>().SetLineVisibility(false);
-            LeftHand.GetComponentInChildren<pointer>().SetLineVisibility(true);
+            RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
+            LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
             myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
         }
         if (TriggerClick.GetStateDown(SteamVR_Input_Sources.RightHand))
@@ -64,8 +64,8 @@ public class StaticMenuHandler : MonoBehaviour
             Debug.Log("LeftHandDominant");
             // set right hand dominant
             DominantHand = SteamVR_Input_Sources.RightHand;
-            RightHand.GetComponentInChildren<pointer>().SetLineVisibility(true);
-            LeftHand.GetComponentInChildren<pointer>().SetLineVisibility(false);
+            RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
+            LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
             myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
             }
     }
