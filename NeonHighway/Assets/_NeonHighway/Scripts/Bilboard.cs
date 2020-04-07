@@ -15,6 +15,7 @@ public class Bilboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(target);
+        transform.LookAt(2*transform.position-target.position);
+        
     }
 }

@@ -73,12 +73,12 @@ public class DynamicMenuHandler : MonoBehaviour
             // enable dominant hand pointer
             if (DominantHand == SteamVR_Input_Sources.RightHand)
             {
-                RightHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(true);
+                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
                 myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
             }
             else
             {
-                LeftHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(true);
+                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
                 myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
             }
             // set canvas event camera to dominant hand pointer camera 
@@ -99,8 +99,8 @@ public class DynamicMenuHandler : MonoBehaviour
                 Debug.Log("LeftHandDominant");
                 // set left handdominant
                 DominantHand = SteamVR_Input_Sources.LeftHand;
-                RightHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(false);
-                LeftHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(true);
+                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
+                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
                 myMenu.GetComponent<Canvas>().worldCamera = LeftHand.GetComponentInChildren<Camera>();
             }
             if (TriggerClick.GetStateDown(SteamVR_Input_Sources.RightHand))
@@ -108,8 +108,8 @@ public class DynamicMenuHandler : MonoBehaviour
                 Debug.Log("LeftHandDominant");
                 // set right hand dominant
                 DominantHand = SteamVR_Input_Sources.RightHand;
-                RightHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(true);
-                LeftHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(false);
+                RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(true);
+                LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
                 myMenu.GetComponent<Canvas>().worldCamera = RightHand.GetComponentInChildren<Camera>();
             }
         }
@@ -120,8 +120,8 @@ public class DynamicMenuHandler : MonoBehaviour
         isVisible = val;
         if (!val)
         {
-            RightHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(false);
-            LeftHand.GetComponentInChildren<pointerOLD>().SetLineVisibility(false);
+            RightHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
+            LeftHand.GetComponentInChildren<Pointer>().SetLineVisibility(false);
         }
     }
 }

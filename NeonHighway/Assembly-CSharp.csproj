@@ -107,19 +107,17 @@
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\DynamicMenuHandler.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\MenuGeneric.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\PanelGeneric.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\Pointer.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\ScrollingButtons.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\StaticMenuHandler.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModuleOLD.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\pointerOLD.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\SteamInputModule.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModule.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PlayerBodyScript.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\Pointer.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PopupText.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ShootingTarget.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\SplineVehicleMovement.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\SteamInputModule.cs" />
-    <Compile Include="Assets\_NeonHighway\Scripts\VRInputModule.cs" />
     <None Include="Assets\ImportedAssets\_VRtwix\Shaders\Prototype_Global.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
