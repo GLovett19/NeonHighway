@@ -15,9 +15,15 @@ EditorBuildSettings:
     path: Assets/_NeonHighway/Scenes/DrivingScene.unity
     guid: 0c99ee66cb2f54841a8c6fd9cd360b96
   - enabled: 1
+    path: Assets/_NeonHighway/Scenes/DrivingScene 1.unity
+    guid: b6c6868e1abf5d34f8e2b1d3de522516
+  - enabled: 1
     path: Assets/_NeonHighway/Scenes/ShootingScene.unity
     guid: c5dc645704768e947827ee6f90037791
   - enabled: 1
     path: Assets/_NeonHighway/Scenes/LevelEndScene.unity
     guid: 406dd977a3285744092e533bf6f31951
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/MainMenu ScrollViewTesting.unity
+    guid: 4a8bd0ec257688d49be43b74dc006da9
   m_configObjects: {}

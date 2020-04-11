@@ -21,7 +21,7 @@ public class MenuGeneric : MonoBehaviour
     [Header("Public Fields")]
     public string currScene;
 
-
+    
     private void Awake()
     {
         MyEventSystem = FindObjectOfType<EventSystem>();
@@ -51,7 +51,14 @@ public class MenuGeneric : MonoBehaviour
         ActiveSceneManager.UnloadScene(currScene);
         ActiveSceneManager.LoadScene(val, false);
     }
-
+    public void SelectScene()
+    {
+        if (GetComponentInChildren<ScoreDisplay>().GetSelectedlevel() != "")
+        {
+            ActiveSceneManager.UnloadScene(currScene);
+            ActiveSceneManager.LoadScene(GetComponentInChildren<ScoreDisplay>().GetSelectedlevel(), false);
+        }
+    }
     // Method to show a menu panel
     public void ShowSinglePanel(string val)
     {

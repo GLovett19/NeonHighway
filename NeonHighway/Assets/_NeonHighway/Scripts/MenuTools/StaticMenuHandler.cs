@@ -17,6 +17,7 @@ public class StaticMenuHandler : MonoBehaviour
     [Header("Inspector Assigned Components")]
     public SteamVR_Action_Boolean TriggerClick;
 
+
     // self assigned components
     private MenuGeneric myMenu;
 
@@ -29,7 +30,7 @@ public class StaticMenuHandler : MonoBehaviour
     void Start()
     {
         myMenu = GetComponentInChildren<MenuGeneric>();
-        myMenu.ShowSinglePanel(myMenu.FirstPanel.name);
+        myMenu.ShowPanel(myMenu.FirstPanel.name);
     }
 
     // Update is called once per frame
