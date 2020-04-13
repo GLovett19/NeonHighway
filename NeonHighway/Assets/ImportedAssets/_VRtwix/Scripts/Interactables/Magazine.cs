@@ -81,7 +81,7 @@ public class Magazine : MonoBehaviour
 	public void GrabStart(CustomHand hand){
 		if (primitiveWeapon) {
 			primitiveWeapon.attachMagazine = null;
-            transform.parent = null;
+			transform.parent = hand.transform;
 			canLoad = true;
 			for (int i = 0; i < primitiveWeapon.myCollidersToIgnore.Length; i++) {
 				for (int j = 0; j < MagazineColliders.Length; j++) {
@@ -100,8 +100,10 @@ public class Magazine : MonoBehaviour
 			FillMagUpdateCheck(hand);
 		}
 	}
+	
 	public void GrabEnd(CustomHand hand)
 	{
+		transform.parent = FindObjectOfType<SteamVR_PlayArea>().transform;
 		//Debug.Log("Dropped mag");
 		switch (dropBehavior)
 		{

@@ -233,7 +233,7 @@ MonoBehaviour:
   LowerButtonClick:
     actionPath: /actions/default/in/LowerButtonClick
     needsReinit: 0
-  dropBehavior: 0
+  dropBehavior: 1
   TimeToDestroy: 3
 --- !u!1 &2431908058476085142
 GameObject:
