@@ -10,8 +10,9 @@ public class CustomInteractible : MonoBehaviour {
     public List<SteamVR_Skeleton_Poser> grabPoints,secondPoses; //not influenting on rotation posers
     public CustomHand leftHand, rightHand;//hand which currently holding an object
     public SteamVR_Skeleton_Poser leftMyGrabPoser, rightMyGrabPoser;//current holding posers
-    public bool TwoHanded, useSecondPose, HideController;//two handed interaction, use posers which influent on rotation, hide controllers
+    public bool TwoHanded, useSecondPose, HideController,DistanceGrabbable;//two handed interaction, use posers which influent on rotation, hide controllers, this object can be grabbed from a distance 
 	public CustomHand.GrabType grabType=CustomHand.GrabType.Grip;//how object should be grabbed
+
 
 	[Header("SoundEvents")]
 	public bool pickReleaseOnce; //sound if all hands are released or picked both hands
@@ -151,6 +152,11 @@ public class CustomInteractible : MonoBehaviour {
 		}
 	}
 
+	public void SetDistanceGrabbable(bool val)
+	{
+		DistanceGrabbable = val;
+	}
+
 	public bool ifOtherHandUseMainPoseOnThisObject(){
 		bool tempBool=false;
 		if (rightHand) {
@@ -193,7 +199,7 @@ public class CustomInteractible : MonoBehaviour {
         }
     }
 
-
+	
 
 
 

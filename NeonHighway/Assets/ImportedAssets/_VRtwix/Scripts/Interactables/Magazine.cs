@@ -129,6 +129,7 @@ public class Magazine : MonoBehaviour
 			primitiveWeapon.attachMagazine = null;
 			transform.parent = null;
 			canLoad = true;
+			GetComponent<PhysicalObject>().SetDistanceGrabbable(true);
 			for (int i = 0; i < primitiveWeapon.myCollidersToIgnore.Length; i++)
 			{
 				for (int j = 0; j < MagazineColliders.Length; j++)
@@ -136,6 +137,7 @@ public class Magazine : MonoBehaviour
 					Physics.IgnoreCollision(primitiveWeapon.myCollidersToIgnore[i], MagazineColliders[j], false);
 				}
 			}
+			primitiveWeapon.previousMagazine = null;
 			primitiveWeapon = null;			
 		}
 
@@ -172,6 +174,7 @@ public class Magazine : MonoBehaviour
 		yield return new WaitForSeconds(val);
 		Destroy(this.gameObject);
 	}
+	
 	void FillMagUpdateCheck(CustomHand hand)
 	{
 		if (LowerButtonClick.GetStateUp(hand.handType))

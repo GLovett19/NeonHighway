@@ -83,7 +83,7 @@ public class DistanceGrabber : MonoBehaviour
             for (int i = 0; i < SelectedDistanceGripColliders.Length; i++)
             {
                 CustomInteractible tempCustomInteractible = SelectedDistanceGripColliders[i].GetComponentInParent<CustomInteractible>();
-                if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == CustomHand.GrabType.Grip)
+                if (tempCustomInteractible != null && tempCustomInteractible.isInteractible && tempCustomInteractible.grabType == CustomHand.GrabType.Grip && tempCustomInteractible.DistanceGrabbable)
                 {
                     if (Vector3.Distance(tempCustomInteractible.transform.position, dot.transform.position) < tempCloseDistance)
                     {

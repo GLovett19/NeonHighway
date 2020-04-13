@@ -16,7 +16,7 @@ public class PrimitiveWeapon : PhysicalObject
 	[Space]
 	public bool detachableMag,armed,typeRevolver;//detach mags, gun ready to shoo, revolver/shotgun
 	public string ammoType; //ammo type
-	public Magazine attachMagazine; //attached mag
+	public Magazine attachMagazine,previousMagazine; //attached mag, the last magazine in the gun
 	public Bullet bulletInside; //ammo inside
 	public Vector3 outBulletSpeed; // casing/ammo extraction speed
 	public ManualReload manualReload; // reload handler ( script )
@@ -37,6 +37,7 @@ public class PrimitiveWeapon : PhysicalObject
 	bool holdOpenReleaseClick; // if the hold release has been clicked
 	public SteamVR_Action_Boolean UpperButtonClick = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("UpperButtonClick"); //input
 
+	public ItemHolder MagazineWell;
 	
 	/* Things I want to change about this gun 
 	 *
@@ -216,33 +217,51 @@ public class PrimitiveWeapon : PhysicalObject
 		MagazineUnload.Invoke ();
 	}
 
+	
+
 	void OnTriggerEnter(Collider c){
 		if (detachableMag&&!attachMagazine) {
 			Magazine tempMagazine = c.GetComponentInParent<Magazine> ();
-			if (tempMagazine&&tempMagazine.ammoType==ammoType) {
+			if (tempMagazine && tempMagazine.ammoType == ammoType
+				&& tempMagazine.GetComponent<PhysicalObject>().isInteractible
+				&& tempMagazine != previousMagazine
+				&& (tempMagazine.GetComponent<PhysicalObject>().rightHand || tempMagazine.GetComponent<PhysicalObject>().leftHand))
+			{
+				tempMagazine.GetComponent<PhysicalObject>().SetDistanceGrabbable(false);
 				//игнор колайтеров магазина
-				myCollidersToIgnore = GetComponentInParent<PrimitiveWeapon> ().gameObject.GetComponentsInChildren<Collider> ();
-				for (int j = 0; j < myCollidersToIgnore.Length; j++) {
-					for (int k = 0; k < tempMagazine.MagazineColliders.Length; k++) {
-						Physics.IgnoreCollision(myCollidersToIgnore[j],tempMagazine.MagazineColliders[k]);
+				myCollidersToIgnore = GetComponentInParent<PrimitiveWeapon>().gameObject.GetComponentsInChildren<Collider>();
+				for (int j = 0; j < myCollidersToIgnore.Length; j++)
+				{
+					for (int k = 0; k < tempMagazine.MagazineColliders.Length; k++)
+					{
+						Physics.IgnoreCollision(myCollidersToIgnore[j], tempMagazine.MagazineColliders[k]);
 					}
 				}
-                PhysicalObject tempPhysicalObject = tempMagazine.GetComponent<PhysicalObject>();
-                if (tempPhysicalObject)
-                {
-                    tempPhysicalObject.DettachHands();
-                    tempPhysicalObject.MyRigidbody.isKinematic = true;
-                }
+				PhysicalObject tempPhysicalObject = tempMagazine.GetComponent<PhysicalObject>();
+				if (tempPhysicalObject)
+				{
+					tempPhysicalObject.DettachHands();
+					tempPhysicalObject.MyRigidbody.isKinematic = true;
+				}
 				tempMagazine.transform.parent = magazineAttachPoint;
 				tempMagazine.transform.localPosition = Vector3.zero;
 				tempMagazine.transform.localRotation = Quaternion.identity;
 				attachMagazine = tempMagazine;
+				previousMagazine = tempMagazine;
 				tempMagazine.primitiveWeapon = this;
 				tempMagazine.canLoad = false;
-				MagazineLoad.Invoke ();
+				MagazineLoad.Invoke();
 				return;
 			}
+			else if (tempMagazine && tempMagazine.ammoType == ammoType
+				&& tempMagazine.GetComponent<PhysicalObject>().isInteractible
+				&& tempMagazine == previousMagazine
+				&& (tempMagazine.GetComponent<PhysicalObject>().rightHand || tempMagazine.GetComponent<PhysicalObject>().leftHand))
+				{
+				previousMagazine = null;
+				}
 				
 		}
 	}
+	
 }

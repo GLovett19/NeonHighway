@@ -87,8 +87,8 @@ public class ItemHolder : CustomInteractible
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<PhysicalObject>()&& 
-            (other.GetComponentInParent<PhysicalObject>().leftHand || other.GetComponentInParent<PhysicalObject>().rightHand)            )
+        if (other.GetComponentInParent<PhysicalObject>()
+            && (other.GetComponentInParent<PhysicalObject>().leftHand || other.GetComponentInParent<PhysicalObject>().rightHand))
         {
             if (possibleSorageObjects.Count > 0)
             {

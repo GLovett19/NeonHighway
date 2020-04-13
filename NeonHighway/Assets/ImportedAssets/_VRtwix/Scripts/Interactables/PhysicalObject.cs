@@ -15,14 +15,17 @@ public class PhysicalObject : CustomInteractible {
     Vector3 LocalDirectionWithPivotLeft,LocalDirectionWithPivotRight; 
 	bool leftIsForvard; 
 
+	
+
 	Vector3 leftHandlePos,rightHandlePos;
 	Quaternion leftHandleRot,rightHandleRot;
 
 	[System.Serializable]
 	public struct SaveVariables{
+
 		public float maxAngelarVelicity,mass,drag,angularDrag;
 		public Vector3 centerOfMass;
-		public bool isKinematic,useGravity;
+		public bool isKinematic, useGravity;
 		public void SaveProperty(Rigidbody rigidbody){
 			useGravity = rigidbody.useGravity;
 			isKinematic = rigidbody.isKinematic;
