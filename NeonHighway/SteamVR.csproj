@@ -442,6 +442,9 @@
  <Reference Include="Valve.Newtonsoft.Json">
  <HintPath>C:/Users/chris/Desktop/Neon Highway/NeonHighway/Assets/ImportedAssets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
  </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>C:/Users/chris/Desktop/Neon Highway/NeonHighway/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
  </Reference>
