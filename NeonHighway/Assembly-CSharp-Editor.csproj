@@ -66,6 +66,7 @@
     <Compile Include="Assets\Editor\BezierCurveInspector.cs" />
     <Compile Include="Assets\Editor\BezierSplineInspector.cs" />
     <Compile Include="Assets\Editor\DistanceGrabberInspector.cs" />
+    <Compile Include="Assets\Editor\SplineWalkerInspector.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

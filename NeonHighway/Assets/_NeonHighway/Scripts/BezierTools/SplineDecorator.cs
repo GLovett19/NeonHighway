@@ -12,8 +12,12 @@ public class SplineDecorator : MonoBehaviour
 
 	public Transform[] items;
 
+	public float progress;
+	public float regularSpacing;
+
 	private void Awake()
 	{
+
 		if (frequency <= 0 || items == null || items.Length == 0)
 		{
 			return;
@@ -32,8 +36,13 @@ public class SplineDecorator : MonoBehaviour
 			for (int i = 0; i < items.Length; i++, p++)
 			{
 				Transform item = Instantiate(items[i]) as Transform;
+
+				// replace with an even distribution option
 				Vector3 position = spline.GetPoint(p * stepSize);
 				item.transform.localPosition = position;
+				// end replace
+
+
 				if (lookForward)
 				{
 					item.transform.LookAt(position + spline.GetDirection(p * stepSize));
@@ -41,5 +50,6 @@ public class SplineDecorator : MonoBehaviour
 				item.transform.parent = transform;
 			}
 		}
+
 	}
 }

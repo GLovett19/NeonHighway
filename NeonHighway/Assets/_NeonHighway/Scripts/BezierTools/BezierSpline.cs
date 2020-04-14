@@ -16,6 +16,10 @@ public class BezierSpline : MonoBehaviour
 	[SerializeField]
 	private bool loop;
 
+
+	public float frequency;
+	public float splineLength;
+
 	public bool Loop
 	{
 		get
@@ -31,6 +35,25 @@ public class BezierSpline : MonoBehaviour
 				SetControlPoint(0, points[0]);
 			}
 		}
+	}
+	public void Awake()
+	{
+		float stepSize = frequency;
+		if (Loop || stepSize == 1)
+		{
+			stepSize = 1f / stepSize;
+		}
+		else
+		{
+			stepSize = 1f / (stepSize - 1);
+		}
+		for (int f = 0; f < frequency; f++)
+		{
+			//Debug.Log(Vector3.Distance(GetPoint(f * stepSize), GetPoint((f + 1) * stepSize)));
+				splineLength += Vector3.Distance(GetPoint(f * stepSize), GetPoint((f + 1) * stepSize));
+			
+		}
+		//return 0;
 	}
 	public int ControlPointCount()
 	{
@@ -232,4 +255,6 @@ public class BezierSpline : MonoBehaviour
 	{
 		return (points.Length - 1) / 3;
 	}
+
+	
 }

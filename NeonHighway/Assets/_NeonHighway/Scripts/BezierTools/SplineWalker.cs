@@ -5,12 +5,17 @@ using UnityEngine;
 public class SplineWalker : MonoBehaviour
 {
     public BezierSpline spline;
+    //duration based movement
+    public bool fixedDuration;
     public float duration;
-    public float speed;
+    public bool goingForeward = true;
+
+    // velocity based motion
+    public float velocity;
 
     public bool lookForward;
     public SplineWalkerMode mode;
-    public bool goingForeward = true;
+    
 
 
     public float progress;
@@ -19,34 +24,46 @@ public class SplineWalker : MonoBehaviour
 
     public virtual void Update()
     {
-        if (goingForeward)
+        if (fixedDuration)
         {
-            progress += Time.deltaTime / (duration*(1 - (speed/100)));
-            if (progress > 1f)
+            if (goingForeward)
             {
-                if (mode == SplineWalkerMode.Once)
+                progress += Time.deltaTime / (duration);
+                if (progress > 1f)
                 {
-                    progress = 1f;
+                    if (mode == SplineWalkerMode.Once)
+                    {
+                        progress = 1f;
+                    }
+                    else if (mode == SplineWalkerMode.Loop)
+                    {
+                        progress -= 1f;
+                    }
+                    else
+                    {
+                        progress = 2f - progress;
+                        goingForeward = false;
+                    }
                 }
-                else if (mode == SplineWalkerMode.Loop)
+            }
+            else
+            {
+                progress -= Time.deltaTime / (duration);
+                if (progress <= 0f)
                 {
-                    progress -= 1f;
-                }
-                else
-                {
-                    progress = 2f - progress;
-                    goingForeward = false;
+                    progress = -progress;
+                    goingForeward = true;
                 }
             }
         }
         else
         {
-            progress -= Time.deltaTime / (duration* (1 - (speed / 100)));
-            if (progress <= 0f)
-            {
-                progress = -progress;
-                goingForeward = true;
-            }
+            float pathOnePercent = Vector3.Distance(spline.GetPoint(progress), spline.GetPoint(progress + 0.1f));
+
+            float realOnePercent = spline.splineLength * 0.1f;
+            float Distortion = realOnePercent / pathOnePercent;
+            float realPercentToMove = (velocity * Time.deltaTime) / spline.splineLength;
+            progress = (realPercentToMove * Distortion) + progress;
         }
         Vector3 position = spline.GetPoint(progress);
         transform.localPosition = position;

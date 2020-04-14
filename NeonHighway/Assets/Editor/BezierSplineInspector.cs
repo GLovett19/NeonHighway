@@ -50,6 +50,21 @@ public class BezierSplineInspector : Editor
     {
         spline = target as BezierSpline;
         EditorGUI.BeginChangeCheck();
+        float frequency = EditorGUILayout.FloatField("Frequency", spline.frequency);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "Frequency");
+            EditorUtility.SetDirty(spline);
+            spline.frequency = frequency;
+        }
+        EditorGUI.BeginChangeCheck();
+        float splineLength = EditorGUILayout.FloatField("length", spline.splineLength);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(spline, "spline Length");
+            EditorUtility.SetDirty(spline);
+        }
+        EditorGUI.BeginChangeCheck();
         bool loop = EditorGUILayout.Toggle("loop", spline.Loop);
         if (EditorGUI.EndChangeCheck())
         {
