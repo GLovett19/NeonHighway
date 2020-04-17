@@ -108,4 +108,5 @@ public class ShootingTarget : MonoBehaviour
         popupText.GetComponent<PopupText>().horizontalMotionSpeed = 5;
         
     }
+
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5237982642169961752}
   - component: {fileID: 7635125742861445396}
   - component: {fileID: 6244254117467508953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grip.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1708533367952104754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178382606992208935}
   - component: {fileID: 2178382606992208928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reloader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178382607058000377}
   - component: {fileID: 2178382607058000378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand Poser ( primary )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382607217801609}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reloader_Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382607782919428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Recoil Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382607849821682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178382607864537475}
   - component: {fileID: 2178382607864537484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reloader_Hand_Poser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 2178382607885516224}
   - component: {fileID: 2178382607885516231}
   - component: {fileID: 2178382607885516230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 2178382608041865720}
   - component: {fileID: 2178382608041865722}
   - component: {fileID: 2178382608041865721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pistol ( Repeating )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382608332873898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Casing Extractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382608466229839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 2178382608513033884}
   - component: {fileID: 2178382608513033875}
   - component: {fileID: 2178382608513033874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 2178382608545291997}
   - component: {fileID: 2178382608545291996}
   - component: {fileID: 2178382608545291987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 2178382608567547094}
   - component: {fileID: 2178382608567547093}
   - component: {fileID: 2178382608567547092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1072,7 +1072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178382608622297236}
   - component: {fileID: 2178382608622297237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand Poser ( secondairy )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2178382608694756986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mag Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178382608864300071}
   - component: {fileID: 2178382608864300064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 1433977163410898699}
   - component: {fileID: 6951667186221793888}
   - component: {fileID: 5235776122993983517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   - component: {fileID: 936122031039783127}
   - component: {fileID: 7428212968021425291}
   - component: {fileID: 7526322198045316712}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: silde part.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1471,7 +1471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3865412598340221510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2162960052433091021}
   - component: {fileID: 585320186744231650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 1229725338500112062}
   - component: {fileID: 1487155299062887728}
   - component: {fileID: 7609363724291599646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: barrier.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3199060952405696848}
   - component: {fileID: 3199060952405696849}
   - component: {fileID: 3199060952405696851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3199060953009983386}
   - component: {fileID: 3199060953009983387}
   - component: {fileID: 3199060953009983380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet-13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +153,7 @@ MonoBehaviour:
   TwoHanded: 0
   useSecondPose: 0
   HideController: 0
+  DistanceGrabbable: 0
   grabType: 3
   pickReleaseOnce: 0
   Grab:
@@ -208,7 +209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3199060953857294680}
   - component: {fileID: 3199060953857294681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand Poser ( primary )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
