@@ -15,13 +15,21 @@ public class PedalTrigger : MonoBehaviour
     }
     public void Update()
     {
-        if (!leftHand.grabPoser || leftHand.grabPoser.GetComponentInParent<SteeringWheel>())
+        if (leftHand.grabType == CustomHand.GrabType.None)//|| leftHand.grabPoser.GetComponentInParent<SteeringWheel>())
         {
-            customUpdate(leftHand);           
+            customUpdate(leftHand);
         }
-        if(!rightHand.grabPoser || rightHand.grabPoser.GetComponentInParent<SteeringWheel>())
+        else
+        {
+            l_Axis = 0;
+        }
+        if (rightHand.grabType == CustomHand.GrabType.None)//|| rightHand.grabPoser.GetComponentInParent<SteeringWheel>())
         {
             customUpdate(rightHand);
+        }
+        else
+        {
+            r_Axis = 0;
         }
         c_Axis = l_Axis + r_Axis;
     }

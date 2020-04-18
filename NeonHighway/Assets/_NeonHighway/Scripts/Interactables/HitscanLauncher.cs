@@ -20,15 +20,20 @@ public class HitscanLauncher : Launcher
                 impact = hit.point;
                 // damage target or create decal or whatever. 
                 // there has to be a better way to do this I just don't know what it is
+                //possible solution, create a switch statement which compares tags assigned to the collider boxes determining the type of object, see SplineVehicleMovement Line#76 for an example 
                 //Debug.Log(hit.transform.name);
-                try
+                string hitTag = hit.collider.tag;
+                switch (hitTag)
                 {
-                    hit.transform.GetComponentInParent<ShootingTarget>().Damage(1);
-                }
-
-                catch
-                {
-                    //Debug.Log("Hit Target cannot recieve Damage");
+                    case "Enemy":
+                        hit.transform.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
+                        break;
+                    case "Obstacle":
+                        // destroy the obstacle? 
+                        break;
+                    default:
+                        // has no tag, or no recognized tag
+                        break;
                 }
             }
             else
