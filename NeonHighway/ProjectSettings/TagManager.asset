@@ -8,6 +8,7 @@ TagManager:
   - PopupText
   - Enemy
   - Obstacle
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

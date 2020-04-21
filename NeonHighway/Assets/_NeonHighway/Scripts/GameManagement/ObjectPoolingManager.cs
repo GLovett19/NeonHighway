@@ -18,7 +18,8 @@ public class ObjectPoolingManager : MonoBehaviour
     {
         none,
         bullet,
-        PopupText
+        PopupText,
+        EnemyBullet
     }
     //public int testing;
     public ObjectToPool[] ObjectsToPool;

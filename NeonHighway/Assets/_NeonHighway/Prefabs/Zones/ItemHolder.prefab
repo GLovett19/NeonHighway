@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5434440074047051617}
   - component: {fileID: 5434440074047051628}
   - component: {fileID: 5434440074047051629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   TwoHanded: 0
   useSecondPose: 0
   HideController: 0
+  DistanceGrabbable: 0
   grabType: 2
   pickReleaseOnce: 0
   Grab:
@@ -165,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434440074606326724}
   - component: {fileID: 5434440074606326723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand Poser ( primary )
   m_TagString: Untagged
   m_Icon: {fileID: 0}
