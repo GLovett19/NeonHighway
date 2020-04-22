@@ -94,6 +94,7 @@
     <Compile Include="Assets\_NeonHighway\Scripts\DistanceGrabber.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\EnemyBullet.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\EnemyStateManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ActiveSceneManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\AppManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\GameManagement\ObjectPoolingManager.cs" />
@@ -116,6 +117,8 @@
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\SteamInputModule.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\MenuTools\VRInputModule.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PlayerBodyScript.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\_NeonHighway\Scripts\PlayerStateManager.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\PopupText.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ScoreDisplay.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\ScoreKeeper.cs" />

@@ -58,12 +58,52 @@ public class SplineWalker : MonoBehaviour
         }
         else
         {
-            float pathOnePercent = Vector3.Distance(spline.GetPoint(progress), spline.GetPoint(progress + 0.1f));
+            if (goingForeward)
+            {
 
-            float realOnePercent = spline.splineLength * 0.1f;
-            float Distortion = realOnePercent / pathOnePercent;
-            float realPercentToMove = (velocity * Time.deltaTime) / spline.splineLength;
-            progress = (realPercentToMove * Distortion) + progress;
+                if (progress >= 1f)
+                {
+                    if (mode == SplineWalkerMode.Once)
+                    {
+                        progress = 1f;
+                    }
+                    else if (mode == SplineWalkerMode.Loop)
+                    {
+                        progress -= 1f;
+                    }
+                    else
+                    {
+                        progress = 1f;
+                        goingForeward = false;
+                    }
+                }
+                else
+                {
+                    float pathOnePercent = Vector3.Distance(spline.GetPoint(progress), spline.GetPoint(progress + 0.1f));
+                    
+                    float realOnePercent = spline.splineLength * 0.1f;                   
+                    float Distortion = realOnePercent / pathOnePercent;
+                    float realPercentToMove = (velocity * Time.deltaTime) / spline.splineLength;
+                    progress = (realPercentToMove * Distortion) + progress;
+                }
+            }
+            else
+            {
+                if (progress <= 0f)
+                {
+                    progress = 0;
+                    goingForeward = true;
+                }
+                else
+                {
+                    float pathOnePercent = Vector3.Distance(spline.GetPoint(progress), spline.GetPoint(progress - 0.1f));
+
+                    float realOnePercent = spline.splineLength * 0.1f;
+                    float Distortion = realOnePercent / pathOnePercent;
+                    float realPercentToMove = (-velocity * Time.deltaTime) / spline.splineLength;
+                    progress = (realPercentToMove * Distortion) + progress;
+                }
+            }
         }
         Vector3 position = spline.GetPoint(progress);
         transform.localPosition = position;

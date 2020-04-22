@@ -24,7 +24,8 @@ public class EnemyAttack : MonoBehaviour
     public float reloadSpeed;// how quickly this enemy can realod after attacking
     public LayerMask lm; // layers to ignore
 
-        //private variables 
+    //private variables 
+    bool isAiming;
     bool AimisGood; // 
     bool isAttacking;
     float count;
@@ -32,17 +33,24 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
+        SetTarget();
         myLineRenderer = GetComponent<LineRenderer>();
     }
 
     void FixedUpdate()
     {
-        count -= Time.deltaTime;
-        UpdateAim();
-        if (AimisGood && count <= 0 && !isAttacking)
+        if (count > 0)
         {
-            isAttacking = false;
-            Attack();
+            count -= Time.deltaTime;
+        }
+        if (isAiming)
+        {
+            UpdateAim();
+            if (AimisGood && count <= 0 && !isAttacking)
+            {
+                isAttacking = false;
+                Attack();
+            }
         }
     }
 
@@ -94,8 +102,12 @@ public class EnemyAttack : MonoBehaviour
 
         // decrement ammo
     }
-    public void SetTarget(Transform var)
+    public void SetTarget()
     {
-        target = var;
+        target = FindObjectOfType<PlayerHealth>().transform;
+    }
+    public void SetAiming(bool bval)
+    {
+        isAiming = bval;
     }
 }

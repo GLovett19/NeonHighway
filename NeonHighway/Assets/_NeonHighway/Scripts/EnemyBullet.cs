@@ -51,6 +51,8 @@ public class EnemyBullet : MonoBehaviour
         switch (colTag)
         {
             case "Player":
+                Debug.Log("Player Hit");
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
                 gameObject.SetActive(false);
                 // hit enemy
                 break;

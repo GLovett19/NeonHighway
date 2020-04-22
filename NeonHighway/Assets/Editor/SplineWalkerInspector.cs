@@ -40,19 +40,29 @@ public class SplineWalkerInspector : Editor
             EditorUtility.SetDirty(walker);
             walker.fixedDuration = fixedDuration;
         }
+        //movement mode
+        EditorGUI.BeginChangeCheck();
+        SplineWalkerMode mode = (SplineWalkerMode)EditorGUILayout.EnumFlagsField("Mode", walker.mode);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(walker, "Mode");
+            EditorUtility.SetDirty(walker);
+            walker.mode = mode;
+        }
+        //show the going foreward bool
+        EditorGUI.BeginChangeCheck();
+        bool goingForeward = EditorGUILayout.Toggle("goingForeward", walker.goingForeward);
+        if (EditorGUI.EndChangeCheck())
+        {
+            Undo.RecordObject(walker, "Toggle goingForeward");
+            EditorUtility.SetDirty(walker);
+            walker.goingForeward = goingForeward;
+        }
 
         // does this walker have a fixed duration
         if (walker.fixedDuration)
         {
-            //movement mode
-            EditorGUI.BeginChangeCheck();
-            SplineWalkerMode mode = (SplineWalkerMode)EditorGUILayout.EnumFlagsField("Mode", walker.mode);
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(walker, "Mode");
-                EditorUtility.SetDirty(walker);
-                walker.mode = mode;
-            }
+           
             // show the duration
             EditorGUI.BeginChangeCheck();
             float duration = EditorGUILayout.FloatField("Duration", walker.duration);
@@ -61,16 +71,7 @@ public class SplineWalkerInspector : Editor
                 Undo.RecordObject(walker, "Duration");
                 EditorUtility.SetDirty(walker);
                 walker.duration = duration;
-            }
-            //show the going foreward bool
-            EditorGUI.BeginChangeCheck();
-            bool goingForeward = EditorGUILayout.Toggle("goingForeward", walker.goingForeward);
-            if (EditorGUI.EndChangeCheck())
-            {
-                Undo.RecordObject(walker, "Toggle goingForeward");
-                EditorUtility.SetDirty(walker);
-                walker.goingForeward = goingForeward;
-            }
+            }          
             
         }
         else
