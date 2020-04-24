@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 3
+  isAiming: 0
+  aimSpeed: 10
   rateOfFire: 3
   ammo: 100
   reloadSpeed: 6

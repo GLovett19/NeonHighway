@@ -15,17 +15,18 @@ public class EnemyAttack : MonoBehaviour
     public Transform target; // thing to shoot at
 
         // private components
-    private LineRenderer myLineRenderer; // indication of aim, in general
+   private LineRenderer myLineRenderer; // indication of aim, obscures vision so I removed it for now
 
-        // public variables 
-    public float speed; // aim speed
+    // public variables 
+    public bool isAiming; // should I be Aiming right now? 
+    public float aimSpeed; // aim speed
     public float rateOfFire; // how quickly this enemy can shoot
     public int ammo; // how many attacks this enemy can make before reloading
     public float reloadSpeed;// how quickly this enemy can realod after attacking
     public LayerMask lm; // layers to ignore
 
     //private variables 
-    bool isAiming;
+    
     bool AimisGood; // 
     bool isAttacking;
     float count;
@@ -46,32 +47,39 @@ public class EnemyAttack : MonoBehaviour
         if (isAiming)
         {
             UpdateAim();
+            /*
             if (AimisGood && count <= 0 && !isAttacking)
             {
                 isAttacking = false;
                 Attack();
             }
+            */
         }
     }
 
     public void UpdateAim()
     {
-        float step = speed * Time.deltaTime;
+        float step = aimSpeed * Time.deltaTime;
         // roatate to look at 
+
+        //transform.LookAt(target);
         Quaternion temp = Quaternion.LookRotation(transform.position - target.position);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, temp,step);
 
         RaycastHit hit;
-        Physics.SphereCast(transform.position, 0.3f, -transform.forward, out hit, 1000, lm);
+        Physics.Raycast(transform.position, -transform.forward, out hit, 100, lm);
         myLineRenderer.SetPosition(0, transform.position);
-        myLineRenderer.SetPosition(1, hit.point);
+        
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             AimisGood = true;
+            myLineRenderer.SetPosition(1, hit.point);
+            Debug.Log("AimIsGood");
         }
         else
         {
             AimisGood = false;
+            myLineRenderer.SetPosition(1, -transform.forward * 100);
         }
 
     }
@@ -79,6 +87,8 @@ public class EnemyAttack : MonoBehaviour
     public void Attack()
     {
         // do the attack things 
+        // might be a good idea to have a "windup" where the texture changes and we can have an audio cue for an attacking enemey 
+
         // instantiate bullet prefab
         GameObject EnemyBullet = ObjectPoolingManager.Instance.GetObject("EnemyBullet");
         EnemyBullet.transform.position = transform.position;
@@ -87,7 +97,6 @@ public class EnemyAttack : MonoBehaviour
         
         //EnemyBullet.GetComponent<EnemyBullet>().SetDirection(transform.rotation.eulerAngles);
         
-        // set rate of fire counter 
         if (ammoCount > 1)
         {
             ammoCount -= 1;
@@ -98,9 +107,8 @@ public class EnemyAttack : MonoBehaviour
             ammoCount = ammo;
             count = reloadSpeed;
         }
-       
 
-        // decrement ammo
+        GetComponentInParent<EnemyStateManager>().SetEnemyState(EnemyStateManager.EnemyState.Idle);
     }
     public void SetTarget()
     {
@@ -109,5 +117,20 @@ public class EnemyAttack : MonoBehaviour
     public void SetAiming(bool bval)
     {
         isAiming = bval;
+    }
+
+    public bool GetAimIsGood()
+    {
+        return AimisGood;
+    }
+    public bool GetRoFisGood()
+    {
+        return count <= 0;
+    }
+    public bool GetIsAttacking()
+    {
+        Debug.Log("is attacking : " + isAttacking);
+        return isAttacking;
+        
     }
 }

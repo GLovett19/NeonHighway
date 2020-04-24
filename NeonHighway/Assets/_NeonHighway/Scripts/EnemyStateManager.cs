@@ -26,22 +26,35 @@ public class EnemyStateManager : MonoBehaviour
     //public Camera cam;
     //private components 
     private ScoreKeeper scoreKeeper;
+    private SplineWalker splineWalker;
+    private EnemyAttack enemyAttack;
 
     //public fields
     public EnemyState enemyState;
     public EnemyAction enemyAction;
     public int Health = 1;
-    public float Velocity = 1;
+    public float velocity;
 
     // private fields 
 
     public void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>(); // there should only ever be one score keeper in the scene so this is fine 
+        splineWalker = GetComponent<SplineWalker>();
+        enemyAttack = GetComponentInChildren<EnemyAttack>();
+        
     }
-
-    public void Update()
+    public void Start()
     {
+        SetEnemyState(EnemyState.Idle);
+    }
+    public virtual void Update()
+    {
+        ChangeEnemyState();
+        if (enemyState != EnemyState.Dying)
+        {
+            ChangeEnemyAction();
+        }
     }
 
     public void SetEnemyState(EnemyState newState)
@@ -52,14 +65,18 @@ public class EnemyStateManager : MonoBehaviour
             {
                 case EnemyState.Idle:
                     {
+                        splineWalker.velocity = 0f;
                     }
                     break;
                 case EnemyState.Moving:
                     {
+                        splineWalker.velocity = velocity;
                     }
                     break;
                 case EnemyState.Dying:
                     {
+                        splineWalker.velocity = 0f;
+                        // start die animation?
                     }
                     break;
                 default:
@@ -68,6 +85,7 @@ public class EnemyStateManager : MonoBehaviour
                     break;
             }
         }
+        enemyState = newState;
     }
     public void ChangeEnemyState()
     {
@@ -75,14 +93,33 @@ public class EnemyStateManager : MonoBehaviour
         {
             case EnemyState.Idle:
                 {
+                    if (splineWalker.spline && 
+                        (splineWalker.goingForeward && splineWalker.progress<1) || (!splineWalker.goingForeward && splineWalker.progress>0))
+                    {
+                        SetEnemyState(EnemyState.Moving);
+                    }
+                    if (Health <= 0)
+                    {
+                        SetEnemyState(EnemyState.Dying);
+                    }
                 }
                 break;
             case EnemyState.Moving:
                 {
+                    if (!splineWalker.spline|| 
+                        (splineWalker.goingForeward && splineWalker.progress >= 1) || (!splineWalker.goingForeward && splineWalker.progress <= 0))
+                    {
+                        SetEnemyState(EnemyState.Idle);
+                    }
+                    if (Health <= 0)
+                    {
+                        SetEnemyState(EnemyState.Dying);
+                    }
                 }
                 break;
             case EnemyState.Dying:
                 {
+                    Die();
                 }
                 break;
             default:
@@ -101,10 +138,13 @@ public class EnemyStateManager : MonoBehaviour
             {
                 case EnemyAction.None:
                     {
+                        
                     }
                     break;
                 case EnemyAction.Attack:
                     {
+                        Debug.Log("Attack");
+                        enemyAttack.Attack();
                     }
                     break;
                 default:
@@ -113,6 +153,7 @@ public class EnemyStateManager : MonoBehaviour
                     break;
             }
         }
+        enemyAction = newAction;
     }
     public void ChangeEnemyAction()
     {
@@ -120,10 +161,15 @@ public class EnemyStateManager : MonoBehaviour
         {
             case EnemyAction.None:
                 {
+                    if (enemyAttack != null && enemyAttack.GetAimIsGood() && enemyAttack.GetRoFisGood() && !enemyAttack.GetIsAttacking())
+                    {
+                        SetEnemyAction(EnemyAction.Attack);
+                    }
                 }
                 break;
             case EnemyAction.Attack:
                 {
+                    SetEnemyAction(EnemyAction.None);
                 }
                 break;
             default:
@@ -145,7 +191,7 @@ public class EnemyStateManager : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
 
     }

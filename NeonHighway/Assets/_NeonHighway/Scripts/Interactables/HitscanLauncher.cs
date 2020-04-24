@@ -26,7 +26,7 @@ public class HitscanLauncher : Launcher
                 switch (hitTag)
                 {
                     case "Enemy":
-                        hit.transform.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
+                        hit.transform.GetComponentInParent<EnemyStateManager>().Damage(1);
                         break;
                     case "Obstacle":
                         // destroy the obstacle? 
