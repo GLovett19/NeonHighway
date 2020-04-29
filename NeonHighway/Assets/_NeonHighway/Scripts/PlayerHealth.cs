@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
                 mySplineWalker.velocity = 0;
             }
             Debug.Log("Player dead");
+            FindObjectOfType<AppManager>().scorePasser = 0;
+            FindObjectOfType<MenuGeneric>().SelectScene("LevelEndScene");
         }
     }
 

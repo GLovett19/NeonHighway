@@ -471,6 +471,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2251811265723833293, guid: 091f6d5b4e97e204c80535170f738570,
+        type: 3}
+      propertyPath: aimSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251811265723833293, guid: 091f6d5b4e97e204c80535170f738570,
+        type: 3}
+      propertyPath: BulletSpeedCompensation
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2251811265723833328, guid: 091f6d5b4e97e204c80535170f738570,
         type: 3}
       propertyPath: m_Name
