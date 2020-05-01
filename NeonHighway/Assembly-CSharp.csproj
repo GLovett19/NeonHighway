@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemySpawn.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\EasySuspension.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\RearWheelDrive.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\CustomHand.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\VRButton.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\Interactables\VelocityFix.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\SoundRandomizer.cs" />
+    <Compile Include="Assets\SpawnPoint.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\Bezier.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierControlPointMode.cs" />
     <Compile Include="Assets\_NeonHighway\Scripts\BezierTools\BezierCurve.cs" />

@@ -36,6 +36,7 @@ public class EnemyStateManager : MonoBehaviour
     public float velocity;
 
     // private fields 
+    float count;
 
     public void Awake()
     {
@@ -76,6 +77,7 @@ public class EnemyStateManager : MonoBehaviour
                 case EnemyState.Dying:
                     {
                         splineWalker.velocity = 0f;
+                        count = 2;
                         // start die animation?
                     }
                     break;
@@ -193,7 +195,15 @@ public class EnemyStateManager : MonoBehaviour
 
     public virtual void Die()
     {
-
+        if (count > 0)
+        {
+            count -= Time.deltaTime;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+       
     }
 
     public void CreatePopupText(string text)
