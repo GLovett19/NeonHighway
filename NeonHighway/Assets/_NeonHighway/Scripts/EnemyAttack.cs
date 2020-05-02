@@ -64,13 +64,16 @@ public class EnemyAttack : MonoBehaviour
         // roatate to look at 
 
         //transform.LookAt(target);
-        SplineWalker myWalker = target.GetComponentInParent<SplineWalker>();
-                                        // target velocity           *      Time to target  = distance 
-        Vector3 movementPredition = (myWalker.velocity * myWalker.spline.GetDirection(myWalker.progress)) * (Vector3.Distance(target.position,transform.position)/BulletSpeedCompensation);
-
-        Quaternion temp = Quaternion.LookRotation(transform.position - (target.position+(movementPredition)));// get the current speed of the vehicle AND the current speed of your head 
+        Vector3 movementPrediction = Vector3.zero;
+        if (target.GetComponentInParent<SplineWalker>())
+        {
+            SplineWalker myWalker = target.GetComponentInParent<SplineWalker>();
+            // target velocity           *      Time to target  = distance 
+            movementPrediction = (myWalker.velocity * myWalker.spline.GetDirection(myWalker.progress)) * (Vector3.Distance(target.position, transform.position) / BulletSpeedCompensation);
+        }
+        Quaternion temp = Quaternion.LookRotation(transform.position - (target.position+(movementPrediction)));// get the current speed of the vehicle AND the current speed of your head 
         transform.rotation = Quaternion.RotateTowards(transform.rotation, temp,step);
-
+            
         /*
         RaycastHit hit;
         Physics.Raycast(transform.position, -transform.forward, out hit, 100, lm);

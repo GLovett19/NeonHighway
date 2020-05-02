@@ -15,7 +15,7 @@ public class PedalTrigger : MonoBehaviour
     }
     public void Update()
     {
-        if (leftHand.grabType == CustomHand.GrabType.None)//|| leftHand.grabPoser.GetComponentInParent<SteeringWheel>())
+        if (leftHand.grabType == CustomHand.GrabType.None || leftHand.grabPoser.GetComponentInParent<SteeringWheel>())
         {
             customUpdate(leftHand);
         }
@@ -23,7 +23,7 @@ public class PedalTrigger : MonoBehaviour
         {
             l_Axis = 0;
         }
-        if (rightHand.grabType == CustomHand.GrabType.None)//|| rightHand.grabPoser.GetComponentInParent<SteeringWheel>())
+        if (rightHand.grabType == CustomHand.GrabType.None || rightHand.grabPoser.GetComponentInParent<SteeringWheel>())
         {
             customUpdate(rightHand);
         }
