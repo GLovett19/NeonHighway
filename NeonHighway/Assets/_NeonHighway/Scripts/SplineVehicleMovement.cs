@@ -79,7 +79,7 @@ public class SplineVehicleMovement : MonoBehaviour
         switch (colTag)
         {
             case "Enemy":
-                collision.collider.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
+                //collision.collider.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
                 break;
             case "Obstacle":
                 Crash(100);
