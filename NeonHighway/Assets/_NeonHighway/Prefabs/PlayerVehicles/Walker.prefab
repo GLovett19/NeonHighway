@@ -2216,7 +2216,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 51bed3ad31d77c34f8e81a140822826f, type: 3}
     m_FontSize: 18
     m_FontStyle: 1
     m_BestFit: 0
@@ -7217,7 +7217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 51bed3ad31d77c34f8e81a140822826f, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
@@ -8876,6 +8876,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5280072561566705892, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5280072561566705895, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
       propertyPath: m_Layer
@@ -8886,6 +8891,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5280072561668616848, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5280072561668616851, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
       propertyPath: m_Layer
@@ -8895,6 +8905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280072561744900440, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5280072561744900443, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
@@ -8951,6 +8966,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5280072562290781050, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5280072562307597759, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
       propertyPath: m_Layer
@@ -8970,6 +8990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280072562440849991, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5280072562467375840, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
@@ -9026,6 +9051,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5280072562899680015, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5280072562918686977, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
       propertyPath: m_Layer
@@ -9041,6 +9071,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5280072563115462057, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5280072563173090008, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
       propertyPath: m_Layer
@@ -9055,6 +9090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280072563257064870, guid: 79668372ffeb8f74ebafa579e5207775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5280072563267753631, guid: 79668372ffeb8f74ebafa579e5207775,
         type: 3}
