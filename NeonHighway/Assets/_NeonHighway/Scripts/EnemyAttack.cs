@@ -117,6 +117,12 @@ public class EnemyAttack : MonoBehaviour
         EnemyBullet.SetActive(true);
         audioSource.PlayOneShot(shoot, 1.0f);
 
+        GameObject EnemyMuzzleFlash = ObjectPoolingManager.Instance.GetObject("MuzzleFlash");
+        EnemyMuzzleFlash.transform.position = transform.position;
+        EnemyMuzzleFlash.transform.rotation = transform.rotation;
+        EnemyMuzzleFlash.SetActive(true);
+        //audioSource.PlayOneShot(shoot, 1.0f);
+
         // I can't test the location of the muzzle flash 
         //Instantiate(muzzleFlash, transform.position, Quaternion.identity);
 

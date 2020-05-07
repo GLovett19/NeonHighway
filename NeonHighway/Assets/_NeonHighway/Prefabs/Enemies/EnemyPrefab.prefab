@@ -444,6 +444,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 4335279396942754829, guid: 091f6d5b4e97e204c80535170f738570,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 091f6d5b4e97e204c80535170f738570, type: 3}
 --- !u!4 &8662856603222536676 stripped

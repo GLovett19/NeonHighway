@@ -19,7 +19,8 @@ public class ObjectPoolingManager : MonoBehaviour
         none,
         bullet,
         PopupText,
-        EnemyBullet
+        EnemyBullet,
+        MuzzleFlash
     }
     //public int testing;
     public ObjectToPool[] ObjectsToPool;

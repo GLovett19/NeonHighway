@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabSound: {fileID: 8300000, guid: f78773e22e14da14ba362a11c9f7e991, type: 3}
-  shootSound: {fileID: 8300000, guid: 6a04b263139973d4c9256660cd9fa87a, type: 3}
+  shootSound: {fileID: 8300000, guid: 86f0dada4512f164aa9f83b50efb911f, type: 3}
   EmptySound: {fileID: 8300000, guid: 9d46eddabf648da428c9e7d0173138be, type: 3}
 --- !u!82 &6714510523114136328
 AudioSource:

@@ -73,7 +73,7 @@ public class SplineDecorator : MonoBehaviour
 							}
 							item.transform.parent = transform;
 							//i++;
-							Debug.Log(progress);
+							//Debug.Log(progress);
 						}
 						else
 						{

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  BulletSpeedCompensation: 5
+  BulletSpeedCompensation: 10
   isAiming: 0
   aimSpeed: 10
   rateOfFire: 3
