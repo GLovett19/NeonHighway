@@ -8,6 +8,9 @@ public class Bullet : PhysicalObject
 	public bool armed=true; // if ammo ready to shoot
 	public Mesh shellModel; // object of casing , which will be replaced after shot
 
+	//Particles
+	public ParticleSystem sparks;
+
 
 	public DropBehavior dropBehavior;
 	public enum DropBehavior

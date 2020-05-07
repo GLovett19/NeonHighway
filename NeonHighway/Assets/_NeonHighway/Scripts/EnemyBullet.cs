@@ -14,6 +14,9 @@ public class EnemyBullet : MonoBehaviour
     public float lifetime;
     public float speed;
 
+    //Particles
+    public ParticleSystem sparks;
+
     // private variables 
     float count;
     Vector3 direction;
@@ -48,6 +51,9 @@ public class EnemyBullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         string colTag = collision.collider.tag;
+       
+        //Spark particles needs to be tested 
+        //Instantiate(sparks, transform.position, Quaternion.identity);
         switch (colTag)
         {
             case "Player":

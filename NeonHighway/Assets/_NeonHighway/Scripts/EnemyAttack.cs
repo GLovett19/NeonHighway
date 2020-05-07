@@ -26,8 +26,15 @@ public class EnemyAttack : MonoBehaviour
     public float reloadSpeed;// how quickly this enemy can realod after attacking
     public LayerMask lm; // layers to ignore
 
+    //Audio
+    public AudioClip shoot;
+    AudioSource audioSource;
+
+    //Particles
+    public ParticleSystem muzzleFlash;
+
     //private variables 
-    
+
     bool AimisGood; // 
     bool isAttacking;
     float count;
@@ -37,6 +44,9 @@ public class EnemyAttack : MonoBehaviour
     {
         SetTarget();
         myLineRenderer = GetComponent<LineRenderer>();
+
+        //Audio
+        audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -105,9 +115,13 @@ public class EnemyAttack : MonoBehaviour
         EnemyBullet.transform.position = transform.position;
         EnemyBullet.transform.rotation = transform.rotation;
         EnemyBullet.SetActive(true);
-        
+        audioSource.PlayOneShot(shoot, 1.0f);
+
+        // I can't test the location of the muzzle flash 
+        //Instantiate(muzzleFlash, transform.position, Quaternion.identity);
+
         //EnemyBullet.GetComponent<EnemyBullet>().SetDirection(transform.rotation.eulerAngles);
-        
+
         if (ammoCount > 1)
         {
             ammoCount -= 1;

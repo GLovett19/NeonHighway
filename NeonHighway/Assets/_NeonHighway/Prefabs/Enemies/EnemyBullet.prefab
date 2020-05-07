@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 10
   speed: 5
+  sparks: {fileID: 2042441852740726636, guid: 98da1da1d3b22474082dffcf4da26dda, type: 3}
