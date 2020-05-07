@@ -11,7 +11,7 @@ public class SplineVehicleMovement : MonoBehaviour
     public SplineWalker walker;
 
     //Temporary Components 
-    public Text DebugText;
+   // public Text DebugText;
 
     //public fields 
     public float maxAngle = 30;
@@ -31,10 +31,11 @@ public class SplineVehicleMovement : MonoBehaviour
 
 
         // debut text for testing vehicle movement 
+        /*
         DebugText.text = ("angle = " + angle.ToString() + "\n"
             + "Speed = " + Speed + "\n"
             + "Road Position Local" + transform.localPosition.ToString() + "\n");
-
+        */
 
         // Left right movement handled here 
         if (Mathf.Abs(transform.localPosition.x) < RoadLimit)

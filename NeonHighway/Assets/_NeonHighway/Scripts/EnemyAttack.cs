@@ -160,7 +160,7 @@ public class EnemyAttack : MonoBehaviour
     }
     public bool GetIsAttacking()
     {
-        Debug.Log("is attacking : " + isAttacking);
+        //Debug.Log("is attacking : " + isAttacking);
         return isAttacking;
         
     }

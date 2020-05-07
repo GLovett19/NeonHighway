@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EnemySpawn.cs" />
+    <Compile Include="Assets\HUDManager.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\EasySuspension.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\EasySuspenssion\RearWheelDrive.cs" />
     <Compile Include="Assets\ImportedAssets\_VRtwix\Scripts\CustomHand.cs" />

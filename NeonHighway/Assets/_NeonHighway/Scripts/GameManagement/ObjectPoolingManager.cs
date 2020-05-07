@@ -61,7 +61,7 @@ public class ObjectPoolingManager : MonoBehaviour
             GameObject prefabInstance = Instantiate(checkObjectType(searchTag));
             prefabInstance.transform.SetParent(transform);
             pool.Add(prefabInstance);
-        Debug.Log("3");
+       // Debug.Log("3");
         return prefabInstance;
 
     }
