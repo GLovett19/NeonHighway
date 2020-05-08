@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a230812b2d6c544b13644bcca7d3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &493906153
+--- !u!21 &530578884
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1282,7 +1282,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236513000}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!43 &1362489938
+--- !u!43 &1373451721
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2312,12 +2312,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 493906153}
+      objectReference: {fileID: 530578884}
     - target: {fileID: 980116203136122433, guid: 78358604ec12e7b45a6147f9261315ff,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1362489938}
+      objectReference: {fileID: 1373451721}
     - target: {fileID: 1534569125491416197, guid: 78358604ec12e7b45a6147f9261315ff,
         type: 3}
       propertyPath: m_AnchoredPosition.y

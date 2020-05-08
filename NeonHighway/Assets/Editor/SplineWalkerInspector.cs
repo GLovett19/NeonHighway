@@ -15,6 +15,8 @@ public class SplineWalkerInspector : Editor
         // assigned spline
         EditorGUI.BeginChangeCheck();
         BezierSpline spline = (BezierSpline)EditorGUILayout.ObjectField(walker.spline,typeof(BezierSpline),true);
+        //SplineWalker walker = (SplineWalker)EditorGUILayout.EnumPopup("spline mode: ", walker.mode)
+
         if (EditorGUI.EndChangeCheck())
         {
             Undo.RecordObject(walker, "Spline");

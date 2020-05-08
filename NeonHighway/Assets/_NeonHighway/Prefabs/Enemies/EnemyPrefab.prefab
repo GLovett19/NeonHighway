@@ -53,7 +53,7 @@ MonoBehaviour:
   goingForeward: 1
   velocity: 0
   lookForward: 1
-  mode: 0
+  mode: 4
   progress: 0
 --- !u!114 &3967097915411305942
 MonoBehaviour:
