@@ -80,10 +80,15 @@ public class SplineVehicleMovement : MonoBehaviour
         switch (colTag)
         {
             case "Enemy":
-                //collision.collider.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
+                if (collision.collider.GetComponentInParent<EnemyStateManager>().enemyState != EnemyStateManager.EnemyState.Dying)
+                {
+                    collision.collider.GetComponentInParent<EnemyStateManager>().Damage(10);// replace shooting target with generic enemy parent script later 
+                    GetComponentInChildren<PlayerHealth>().TakeDamage(1);
+                }
                 break;
             case "Obstacle":
                 Crash(100);
+                GetComponentInChildren<PlayerHealth>().TakeDamage(1);
                 // slow down the vehicle and possibly cause damage
                 break;
             default:
