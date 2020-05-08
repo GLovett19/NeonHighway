@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &309853268829213534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.57639
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.84177923
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.5512304
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000081460335
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4befa6c7e05b1ae459876a7595ff85ed, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4322eb53286d464478277d90008eaaa3, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50161c2aafa37f4478ce586229886c30, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c5bcae263f649a4795bf9e69c0e2f3e, type: 2}
+    - target: {fileID: -1504981713932161579, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 706c35e6695f3944fa6c9d4698c9e60f, type: 2}
+    - target: {fileID: -927199367670048503, guid: b0f77faefcedad84da29a08f40f0fdcd,
+        type: 3}
+      propertyPath: m_Name
+      value: Yellow Traffic Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0f77faefcedad84da29a08f40f0fdcd, type: 3}
