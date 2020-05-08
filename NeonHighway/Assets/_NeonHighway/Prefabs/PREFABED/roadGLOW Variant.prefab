@@ -72,10 +72,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4c25bc2ebc46faa4299938525f8241e7, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 8098c92028527b04b899ad6938ff6995,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a18d3b2cd604c34a9ee6f3c31a47db6, type: 2}
     - target: {fileID: -927199367670048503, guid: 8098c92028527b04b899ad6938ff6995,
         type: 3}
       propertyPath: m_Name
-      value: roadGLOW
+      value: roadGLOW Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8098c92028527b04b899ad6938ff6995, type: 3}

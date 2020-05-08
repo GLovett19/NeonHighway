@@ -181,6 +181,7 @@ MonoBehaviour:
   armed: 1
   shellModel: {fileID: -3488132641361518145, guid: 8f39d2b8d57be794f91b12bb1c6e4cf7,
     type: 3}
+  sparks: {fileID: 2042441852740726636, guid: 98da1da1d3b22474082dffcf4da26dda, type: 3}
   dropBehavior: 1
   TimeToDestroy: 1
 --- !u!54 &3199060953009983380

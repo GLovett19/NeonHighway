@@ -76,12 +76,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 6077b7150dcf47c47bd74bf0b7a0c200, type: 2}
+      objectReference: {fileID: 2100000, guid: 1a18d3b2cd604c34a9ee6f3c31a47db6, type: 2}
     - target: {fileID: -1504981713932161579, guid: c470e9a8e113289409fae7e6616919c7,
         type: 3}
       propertyPath: m_Materials.Array.data[4]
       value: 
-      objectReference: {fileID: 2100000, guid: 6077b7150dcf47c47bd74bf0b7a0c200, type: 2}
+      objectReference: {fileID: 2100000, guid: 1a18d3b2cd604c34a9ee6f3c31a47db6, type: 2}
     - target: {fileID: -1504981713932161579, guid: c470e9a8e113289409fae7e6616919c7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -91,7 +91,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 6077b7150dcf47c47bd74bf0b7a0c200, type: 2}
+      objectReference: {fileID: 2100000, guid: 1a18d3b2cd604c34a9ee6f3c31a47db6, type: 2}
     - target: {fileID: -1504981713932161579, guid: c470e9a8e113289409fae7e6616919c7,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c470e9a8e113289409fae7e6616919c7,
         type: 3}
       propertyPath: m_Name
-      value: museumdpink
+      value: museumdpink Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c470e9a8e113289409fae7e6616919c7, type: 3}

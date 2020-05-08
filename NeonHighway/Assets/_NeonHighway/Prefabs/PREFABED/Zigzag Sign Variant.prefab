@@ -77,10 +77,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: d1e062454d302ac4486053a2c05d13f2, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 0a028884a5dab934ca04be1aefb89f52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4befa6c7e05b1ae459876a7595ff85ed, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 0a028884a5dab934ca04be1aefb89f52,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4699162814427963157, guid: 0a028884a5dab934ca04be1aefb89f52,
+        type: 3}
     - target: {fileID: -927199367670048503, guid: 0a028884a5dab934ca04be1aefb89f52,
         type: 3}
       propertyPath: m_Name
-      value: Zigzag Sign
+      value: Zigzag Sign Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a028884a5dab934ca04be1aefb89f52, type: 3}
