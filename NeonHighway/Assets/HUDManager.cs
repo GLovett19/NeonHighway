@@ -33,7 +33,10 @@ public class HUDManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        progressTracker.value = myWalker.progress;
+        if (progressTracker)
+        {
+            progressTracker.value = myWalker.progress;
+        }
         UpdateHealth();
         if (count > 0)
         {

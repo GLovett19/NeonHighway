@@ -457,7 +457,7 @@
       <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Assets/ImportedAssets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Library/PackageCache/com.unity.render-pipelines.core@7.1.8/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>D:/GAME399_GeorgeLovett_AR-VR/NeonHighwayRepository/NeonHighway/Library/PackageCache/com.unity.render-pipelines.core@7.2.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

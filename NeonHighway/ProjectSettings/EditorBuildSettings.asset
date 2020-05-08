@@ -14,7 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_NeonHighway/Scenes/LevelEndScene.unity
     guid: 406dd977a3285744092e533bf6f31951
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/TargetRange.unity
+    guid: c5dc645704768e947827ee6f90037791
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/Levels/Level_01.unity
+    guid: b6c6868e1abf5d34f8e2b1d3de522516
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/Levels/Level_02.unity
+    guid: b9db9961fa59a97408a0cee71912336e
   m_configObjects: {}

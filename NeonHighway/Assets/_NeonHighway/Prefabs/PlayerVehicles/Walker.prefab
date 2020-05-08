@@ -2548,7 +2548,7 @@ MonoBehaviour:
   PivotPoser: {fileID: 0}
   ToolTransform: {fileID: 0}
   HideController: 1
-  alwaysHideController: 0
+  alwaysHideController: 1
   Squeeze: 0
   hapticSignal:
     actionPath: /actions/default/out/Haptic
@@ -2809,7 +2809,7 @@ MonoBehaviour:
   PivotPoser: {fileID: 0}
   ToolTransform: {fileID: 0}
   HideController: 1
-  alwaysHideController: 0
+  alwaysHideController: 1
   Squeeze: 0
   hapticSignal:
     actionPath: /actions/default/out/Haptic
