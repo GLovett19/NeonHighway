@@ -145,7 +145,7 @@ public class EnemyStateManager : MonoBehaviour
                     break;
                 case EnemyAction.Attack:
                     {
-                        Debug.Log("Attack");
+                        //Debug.Log("Attack");
                         enemyAttack.Attack();
                     }
                     break;

@@ -19,7 +19,8 @@ public class ObjectPoolingManager : MonoBehaviour
         none,
         bullet,
         PopupText,
-        EnemyBullet
+        EnemyBullet,
+        MuzzleFlash
     }
     //public int testing;
     public ObjectToPool[] ObjectsToPool;
@@ -60,7 +61,7 @@ public class ObjectPoolingManager : MonoBehaviour
             GameObject prefabInstance = Instantiate(checkObjectType(searchTag));
             prefabInstance.transform.SetParent(transform);
             pool.Add(prefabInstance);
-        Debug.Log("3");
+       // Debug.Log("3");
         return prefabInstance;
 
     }

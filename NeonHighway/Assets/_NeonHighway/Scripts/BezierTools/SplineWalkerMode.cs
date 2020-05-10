@@ -4,8 +4,11 @@ using UnityEngine;
 
 public enum SplineWalkerMode
 {
+    None,
     Once,
     Loop,
     PingPong,
+    Destroy,
+
 }
 

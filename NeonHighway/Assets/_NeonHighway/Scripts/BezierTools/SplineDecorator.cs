@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SplineDecorator : MonoBehaviour
 {
@@ -18,36 +16,70 @@ public class SplineDecorator : MonoBehaviour
 	private void Awake()
 	{
 
-		if (frequency <= 0 || items == null || items.Length == 0)
+
+		if (frequency > 0 && items != null && items.Length > 0)
 		{
-			return;
-		}
-		float stepSize = frequency * items.Length;
-		if (spline.Loop || stepSize == 1)
-		{
-			stepSize = 1f / stepSize;
-		}
-		else
-		{
-			stepSize = 1f / (stepSize - 1);
-		}
-		for (int p = 0, f = 0; f < frequency; f++)
-		{
-			for (int i = 0; i < items.Length; i++, p++)
+			float stepSize = frequency * items.Length;
+			if (spline.Loop || stepSize == 1)
 			{
-				Transform item = Instantiate(items[i]) as Transform;
-
-				// replace with an even distribution option
-				Vector3 position = spline.GetPoint(p * stepSize);
-				item.transform.localPosition = position;
-				// end replace
-
-
-				if (lookForward)
+				stepSize = 1f / stepSize;
+			}
+			else
+			{
+				stepSize = 1f / (stepSize - 1);
+			}
+			for (int p = 0, f = 0; f < frequency; f++)
+			{
+				for (int i = 0; i < items.Length; i++, p++)
 				{
-					item.transform.LookAt(position + spline.GetDirection(p * stepSize));
+					Transform item = Instantiate(items[i]) as Transform;
+
+					// replace with an even distribution option
+					Vector3 position = spline.GetPoint(p * stepSize);
+					item.transform.localPosition = position;
+					// end replace
+
+
+					if (lookForward)
+					{
+						item.transform.LookAt(position + spline.GetDirection(p * stepSize));
+					}
+					item.transform.parent = transform;
 				}
-				item.transform.parent = transform;
+			}
+		}
+		else if (regularSpacing > 0 && items != null && items.Length > 0)
+		{
+			int i = 0;
+			while (progress < 1)
+			{
+	
+						if (!float.IsNaN(spline.splineLength))
+						{
+							float pathOnePercent = Vector3.Distance(spline.GetPoint(progress), spline.GetPoint(progress + 0.1f));
+							float realOnePercent = spline.splineLength * 0.1f;
+							float Distortion = realOnePercent / pathOnePercent;
+							float regularSpacingPercent = regularSpacing / spline.splineLength;
+							//Debug.Log(realPercentToMove* Distortion);
+							progress = (regularSpacingPercent * Distortion) + progress;
+
+							Transform item = Instantiate(items[i]) as Transform;
+							Vector3 position = spline.GetPoint(progress);
+							item.transform.localPosition = position;
+
+							if (lookForward)
+							{
+								item.transform.LookAt(position + spline.GetDirection(progress));
+							}
+							item.transform.parent = transform;
+							//i++;
+							//Debug.Log(progress);
+						}
+						else
+						{
+							Debug.Log("is NaN");
+						}
+					
 			}
 		}
 

@@ -45,6 +45,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyToSpawn: {fileID: 364807520667805165, guid: 4084a9a1030672242836b8c6be561ea0,
     type: 3}
+  MySpline: {fileID: 0}
+  velocity: 0
+  lookForeward: 0
+  BulletSpeedCompensation: 5
+  isAiming: 0
+  aimSpeed: 0
+  rateOfFire: 0
+  ammo: 0
+  reloadSpeed: 0
 --- !u!1 &2049669471346829908
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +67,7 @@ GameObject:
   - component: {fileID: 2049669471346829905}
   - component: {fileID: 2049669471346829906}
   - component: {fileID: 2049669471346829907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySpawnTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

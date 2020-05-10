@@ -11,7 +11,7 @@ public class SplineVehicleMovement : MonoBehaviour
     public SplineWalker walker;
 
     //Temporary Components 
-    public Text DebugText;
+   // public Text DebugText;
 
     //public fields 
     public float maxAngle = 30;
@@ -31,10 +31,11 @@ public class SplineVehicleMovement : MonoBehaviour
 
 
         // debut text for testing vehicle movement 
+        /*
         DebugText.text = ("angle = " + angle.ToString() + "\n"
             + "Speed = " + Speed + "\n"
             + "Road Position Local" + transform.localPosition.ToString() + "\n");
-
+        */
 
         // Left right movement handled here 
         if (Mathf.Abs(transform.localPosition.x) < RoadLimit)
@@ -79,10 +80,15 @@ public class SplineVehicleMovement : MonoBehaviour
         switch (colTag)
         {
             case "Enemy":
-                //collision.collider.GetComponentInParent<ShootingTarget>().Damage(1);// replace shooting target with generic enemy parent script later 
+                if (collision.collider.GetComponentInParent<EnemyStateManager>().enemyState != EnemyStateManager.EnemyState.Dying)
+                {
+                    collision.collider.GetComponentInParent<EnemyStateManager>().Damage(10);// replace shooting target with generic enemy parent script later 
+                    GetComponentInChildren<PlayerHealth>().TakeDamage(1);
+                }
                 break;
             case "Obstacle":
                 Crash(100);
+                GetComponentInChildren<PlayerHealth>().TakeDamage(1);
                 // slow down the vehicle and possibly cause damage
                 break;
             default:

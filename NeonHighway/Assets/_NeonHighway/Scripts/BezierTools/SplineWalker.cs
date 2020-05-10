@@ -17,7 +17,7 @@ public class SplineWalker : MonoBehaviour
     public SplineWalkerMode mode;
     
 
-
+    
     public float progress;
 
 
@@ -38,6 +38,10 @@ public class SplineWalker : MonoBehaviour
                     else if (mode == SplineWalkerMode.Loop)
                     {
                         progress -= 1f;
+                    }
+                    else if (mode == SplineWalkerMode.Destroy)
+                    {
+                        Destroy(gameObject);
                     }
                     else
                     {
@@ -70,6 +74,10 @@ public class SplineWalker : MonoBehaviour
                     else if (mode == SplineWalkerMode.Loop)
                     {
                         progress -= 1f;
+                    }
+                    else if (mode == SplineWalkerMode.Destroy)
+                    {
+                        Destroy(gameObject);
                     }
                     else
                     {
