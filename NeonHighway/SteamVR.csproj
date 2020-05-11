@@ -255,10 +255,17 @@
     <None Include="Assets\ImportedAssets\SteamVR\SteamVR.asmdef" />
     <None Include="Assets\ImportedAssets\SteamVR\Resources\SteamVR_Fade.shader" />
     <Reference Include="UnityEditor.UI">
+<<<<<<< HEAD
       <HintPath>C:/Users/truon/OneDrive/Desktop/Neon Highway Repository/NeonHighway/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Users/truon/OneDrive/Desktop/Neon Highway Repository/NeonHighway/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+=======
+      <HintPath>E:/Game VR modeling/SourceTree/NeonHighway/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:/Game VR modeling/SourceTree/NeonHighway/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+>>>>>>> d5f2dba1c11da8d692aa488bd5370abd79c7aff5
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -446,17 +453,21 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
+<<<<<<< HEAD
       <HintPath>C:/Users/truon/OneDrive/Desktop/Neon Highway Repository/NeonHighway/Assets/ImportedAssets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>C:/Users/truon/OneDrive/Desktop/Neon Highway Repository/NeonHighway/Library/PackageCache/com.unity.render-pipelines.core@7.2.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+=======
+      <HintPath>E:/Game VR modeling/SourceTree/NeonHighway/Assets/ImportedAssets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>E:/Game VR modeling/SourceTree/NeonHighway/Library/PackageCache/com.unity.render-pipelines.core@7.2.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+>>>>>>> d5f2dba1c11da8d692aa488bd5370abd79c7aff5
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
