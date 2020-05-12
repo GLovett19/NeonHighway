@@ -74,6 +74,8 @@ MonoBehaviour:
   enemyAction: 0
   Health: 1
   velocity: 0
+  DeathParticles: {fileID: 7564777549236307744, guid: 7eb747b8d36644546a95f69c22e5acc3,
+    type: 3}
 --- !u!1 &5296013449004403288
 GameObject:
   m_ObjectHideFlags: 0

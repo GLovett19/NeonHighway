@@ -35,6 +35,9 @@ public class EnemyStateManager : MonoBehaviour
     public int Health = 1;
     public float velocity;
 
+    //Particles 
+    public ParticleSystem DeathParticles;
+
     // private fields 
     float count;
 
@@ -201,6 +204,7 @@ public class EnemyStateManager : MonoBehaviour
         }
         else
         {
+            Instantiate(DeathParticles, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
        
