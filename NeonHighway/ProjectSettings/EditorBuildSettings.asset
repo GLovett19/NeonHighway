@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_NeonHighway/Scenes/Levels/Level_03.unity
     guid: a6b377b9aea3a0547ba3ce2a6c3cd336
+  - enabled: 1
+    path: Assets/_NeonHighway/Scenes/Levels/Level_04.unity
+    guid: 3048dc153730c5946a35e3ab0ef002e9
   m_configObjects: {}
